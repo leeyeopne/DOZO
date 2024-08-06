@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.mapper.ProductDetailMapper">
+
+
+
+	<insert id="insertBasket" parameterType="com.yedam.vo.BasketVO">
+		insert into
+		productinventory(prod_color, prod_size, prod_quantity)
+		values(#{prodColor}, #{prodSize}, #{prodQuantity})
+		
+	</insert>
+	
+	
+</mapper>

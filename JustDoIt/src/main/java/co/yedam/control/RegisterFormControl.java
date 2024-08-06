@@ -1,4 +1,4 @@
-package co.yedam.web;
+package co.yedam.control;
 
 import java.io.IOException;
 
@@ -8,12 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
 
-public class ProductControl implements Control {
+public class RegisterFormControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+		req.getRequestDispatcher("register/registerForm.tiles").forward(req, resp); // 페이지 재지정
 	}
 
 }

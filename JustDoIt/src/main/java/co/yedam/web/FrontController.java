@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.control.ProductDetailControl;
 
 public class FrontController extends HttpServlet {
 
@@ -22,10 +23,10 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// 상품목록.
-		map.put("/productList.do", new ProductListControl());
-		// 상품상세.
-		map.put("/productInfo.do", new ProductControl());
+
+		
+		map.put("/productDetailInfo.do", new ProductDetailControl());
+	
 	}
 
 	@Override
@@ -34,6 +35,8 @@ public class FrontController extends HttpServlet {
 		String uri = req.getRequestURI();
 		String context = req.getContextPath();
 		String path = uri.substring(context.length());
+
+		
 
 		Control sub = map.get(path);
 		sub.exec(req, resp);
