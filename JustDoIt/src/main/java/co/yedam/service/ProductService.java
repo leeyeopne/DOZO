@@ -1,5 +1,9 @@
 package co.yedam.service;
 
-public interface ProductService {
+import java.util.List;
 
+import co.yedam.vo.ProductVO;
+
+public interface ProductService {
+	List<ProductVO> productList();
 }
