@@ -165,7 +165,11 @@ ol {
 	font-weight: 600;
 	padding: 12px 30px 10px;
 	color: #ffffff;
+<<<<<<< HEAD
+	background: #ca4040;
+=======
 	background: #ca1515;
+>>>>>>> refs/heads/master
 }
 
 .site-btn {

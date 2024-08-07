@@ -16,7 +16,4 @@
 		FROM product
 		ORDER BY prod_no
 	</select>
-	
-	
-
 </mapper>
