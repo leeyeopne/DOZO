@@ -6,12 +6,7 @@
 
 
 
-	<insert id="insertBasket" parameterType="com.yedam.vo.BasketVO">
-		insert into
-		productinventory(prod_color, prod_size, prod_quantity)
-		values(#{prodColor}, #{prodSize}, #{prodQuantity})
-		
-	</insert>
+
 	
 	
 </mapper>
