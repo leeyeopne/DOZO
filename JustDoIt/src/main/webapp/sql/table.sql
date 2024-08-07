@@ -19,4 +19,4 @@ values('P004', '에티오피아 예가체프', '아주 맛있는 에티오피아
 insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
 values('P005', '케냐 오크라톡신', '아주 맛있는 케냐 오크라톡신 입니다', 3500, 2800, 1, '케냐 오크라톡신.jpg');
 insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
-values('P006', '코스타리카 따라주', '아주 맛있는 코스타리카 따라주 입니다', 4500, 3200, 2, '코스타리카 따라주.jpg');
+values('P006', '코스타리카 따라주', '아주 맛있는 코스타리카 따라주 입니다', 4500, 3200, 1, '코스타리카 따라주.jpg');
