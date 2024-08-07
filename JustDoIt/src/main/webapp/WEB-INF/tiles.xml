@@ -7,26 +7,15 @@
   <definition name="myapp.user" template="/WEB-INF/layout/template.jsp">
     <put-attribute name="title" value="Shop Homepage - Start Bootstrap Template" />
     <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
-<<<<<<< HEAD
-=======
-    <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
->>>>>>> refs/heads/master
     <put-attribute name="body" value="/WEB-INF/layout/body.jsp" />
     <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
   </definition>
   
-<<<<<<< HEAD
   <definition name="WILDCARD:register/*" extends="myapp.user">
-=======
-  <definition name="WILDCARD:product/*" extends="myapp.user">
->>>>>>> refs/heads/master
     <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
   </definition>
-<<<<<<< HEAD
   
   <definition name="WILDCARD:login/*" extends="myapp.user">
     <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
   </definition>
-=======
->>>>>>> refs/heads/master
 </tiles-definitions>
