@@ -1,6 +1,9 @@
 package co.yedam.vo;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 
 @Data
 public class ProductVO {
