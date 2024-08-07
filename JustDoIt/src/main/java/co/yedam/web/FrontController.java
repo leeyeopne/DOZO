@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
 import co.yedam.control.LoginFormControl;
+import co.yedam.control.ProductDetailControl;
 import co.yedam.control.RegisterControl;
 import co.yedam.control.RegisterFormControl;
 import co.yedam.control.loginControl;
@@ -26,19 +27,21 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		
+
+		map.put("/productDetailInfo.do", new ProductDetailControl());
+
 		// 회원가입 창 이동
 		map.put("/registerForm.do", new RegisterFormControl());
-		
+
 		// 회원가입 기능
 		map.put("/register.do", new RegisterControl());
-		
+
 		// 로그인 창 이동
 		map.put("/loginForm.do", new LoginFormControl());
-		
+
 		// 로그인 기능
 		map.put("/login.do", new loginControl());
-	
+
 	}
 
 	@Override

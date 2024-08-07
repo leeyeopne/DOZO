@@ -17,6 +17,7 @@
 				<div class="tip">2</div> </a></li>
 	</ul>
 	<div class="offcanvas__logo">
+
 		<a href="./index.html"><img src="img/lee.jpg" alt=""></a>
 	</div>
 	<div id="mobile-menu-wrap"></div>
