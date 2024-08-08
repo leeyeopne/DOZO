@@ -11,11 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+
+import co.yedam.control.BasketControl;
+
 import co.yedam.control.IdCheckControl;
+
 import co.yedam.control.LoginFormControl;
 import co.yedam.control.ProductDetailControl;
 import co.yedam.control.RegisterControl;
 import co.yedam.control.RegisterFormControl;
+import co.yedam.control.WishlistControl;
 import co.yedam.control.loginControl;
 
 public class FrontController extends HttpServlet {
@@ -28,7 +33,9 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-
+		
+		
+		// 상품 상세페이지
 		map.put("/productDetailInfo.do", new ProductDetailControl());
 
 		// 회원가입 창 이동
@@ -46,6 +53,12 @@ public class FrontController extends HttpServlet {
 		// 아이디 중복 기능
 		map.put("/idCheck.do", new IdCheckControl());
 
+
+		// 장바구니 데이터 추가
+		map.put("/addBasket.do", new BasketControl());
+
+		// 위시리스트 데이터 추가
+		map.put("/addWishlist.do", new WishlistControl());
 
 	}
 

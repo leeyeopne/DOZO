@@ -24,29 +24,29 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="product__details__pic">
-                        <div class="product__details__pic__left product__thumb nice-scroll">
-                        
-                            <a class="pt active" href="#product-1">
-                                <img src="img/nikeimg/${product.prodImage1}" alt="">
-                            </a>
-                            
-                            <a class="pt" href="#product-2">
-                                <img src="img/nikeimg/${product.prodImage2}" alt="">
-                            </a>
-                            <a class="pt" href="#product-3">
-                                <img src="img/nikeimg/${product.prodImage3}" alt="">
-                            </a>
-                            <a class="pt" href="#product-4">
-                                <img src="img/nikeimg/${product.prodImage4}" alt="">
-                            </a>
-                        </div>
+					<div class="product__details__pic__left product__thumb nice-scroll">
+
+						<a class="pt active" href="#product-1"> <img
+							src="img/nikeimg/${product.prodImage1}" alt="">
+						</a> <a class="pt" href="#product-2"> <img
+							src="img/nikeimg/${product.prodImage2}" alt="">
+						</a> <a class="pt" href="#product-3"> <img
+							src="img/nikeimg/${product.prodImage3}" alt="">
+						</a> <a class="pt" href="#product-4"> <img
+							src="img/nikeimg/${product.prodImage4}" alt="">
+						</a>
+					</div>
 					<div class="product__details__slider__content">
-                            <div class="product__details__pic__slider owl-carousel">
-                                <img data-hash="product-1" class="product__big__img" src="img/nikeimg/${product.prodImage1}" alt="">
-                                <img data-hash="product-2" class="product__big__img" src="img/nikeimg/${product.prodImage2}" alt="">
-                                <img data-hash="product-3" class="product__big__img" src="img/nikeimg/${product.prodImage3}" alt="">
-                                <img data-hash="product-4" class="product__big__img" src="img/nikeimg/${product.prodImage4}" alt="">
-                            </div>
+						<div class="product__details__pic__slider owl-carousel">
+							<img data-hash="product-1" class="product__big__img"
+								src="img/nikeimg/${product.prodImage1}" alt=""> <img
+								data-hash="product-2" class="product__big__img"
+								src="img/nikeimg/${product.prodImage2}" alt=""> <img
+								data-hash="product-3" class="product__big__img"
+								src="img/nikeimg/${product.prodImage3}" alt=""> <img
+								data-hash="product-4" class="product__big__img"
+								src="img/nikeimg/${product.prodImage4}" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -62,59 +62,67 @@
 					</div>
 					<div class="product__details__price">${product.prodPrice }</div>
 					<p>${product.prodExp }</p>
-					<div class="product__details__button">
-						<div class="quantity">
-							<span>Quantity:</span>
-							<div class="pro-qty">
-								<input type="text" value="1">
-							</div>
+
+					<form action="basketControl" id="basketForm">
+						<input type="hidden" name="prodNo" value="${product.prodNo}" />
+						<div class="product__details__widget">
+							<ul>
+								<li><span>Available color:</span>
+									<div class="color__checkbox">
+										<label for="red"> <input type="radio"
+											name="basketColor" id="red" value="red" checked> 
+											<span
+											class="checkmark"></span></label> 
+											<label for="black"> <input type="radio"
+											name="basketColor" id="black" value="black"> <span
+											class="checkmark black-bg"></span></label> 
+											<label for="grey"> <input type="radio"
+											name="basketColor" id="grey" value="grey"> <span
+											class="checkmark grey-bg"></span></label>
+									</div></li>
+								<li><span>Available size:</span>
+									<div class="size__btn">
+										<label for="xs-btn" class="active"> 
+										<input type="radio" id="xs-btn"> xs
+										</label> 
+										<label for="s-btn"> <input type="radio" id="s-btn"
+											name="basketSize" value="s"> s
+										</label> 
+										<label for="m-btn"> <input type="radio" id="m-btn"
+											name="basketSize" value="m"> m
+										</label> 
+										<label for="l-btn"> <input type="radio" id="l-btn"
+											name="basketSize" value="l"> l
+										</label>
+									</div></li>
+							</ul>
 						</div>
-						<a href="#" class="cart-btn"><span class="icon_bag_alt"></span>
-							Add to cart</a>
-						<ul>
-							<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-							<li><a href="#"><span class="fa-regular fa-heart"></span></a></li>
+						
+						
+						<div class="product__details__button">
+							<div class="quantity">
+								<span>Quantity:</span>
+								<div class="pro-qty">
+									<input type="number" name="basketQuantity" value="1">
+								</div>
+							</div>
 							
-							<li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
-						</ul>
-					</div>
-					<div class="product__details__widget">
-						<ul>
-							<li><span>Availability:</span>
-								<div class="stock__checkbox">
-									<label for="stockin"> In Stock <input type="checkbox"
-										id="stockin"> <span class="checkmark"></span>
-									</label>
-								</div></li>
-							<li><span>Available color:</span>
-								<div class="color__checkbox">
-									<label for="red"> <input type="radio"
-										name="color__radio" id="red" checked> <span
-										class="checkmark"></span>
-									</label> <label for="black"> <input type="radio"
-										name="color__radio" id="black"> <span
-										class="checkmark black-bg"></span>
-									</label> <label for="grey"> <input type="radio"
-										name="color__radio" id="grey"> <span
-										class="checkmark grey-bg"></span>
-									</label>
-								</div></li>
-							<li><span>Available size:</span>
-								<div class="size__btn">
-									<label for="xs-btn" class="active"> <input type="radio"
-										id="xs-btn"> xs
-									</label> <label for="s-btn"> <input type="radio" id="s-btn">
-										s
-									</label> <label for="m-btn"> <input type="radio" id="m-btn">
-										m
-									</label> <label for="l-btn"> <input type="radio" id="l-btn">
-										l
-									</label>
-								</div></li>
-							<li><span>Promotions:</span>
-								<p>Free shipping</p></li>
-						</ul>
-					</div>
+						<div class="product__details__button">
+							<button type="submit"
+								class="cart-btn"><span class="icon_bag_alt"></span> Add to
+								cart</button>
+								
+						</div>
+						</div>
+					</form>
+						<div class="product__details__button">
+							<ul>
+								<li><a href="#"><span class="icon_heart_alt"></span></a></li>
+								<li><a href="#"><span class="fa-regular fa-heart"></span></a></li>
+
+								<li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
+							</ul>
+						</div>
 				</div>
 			</div>
 			<div class="col-lg-12">
