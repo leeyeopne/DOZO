@@ -28,7 +28,7 @@ public class loginControl implements Control {
 			HttpSession session = req.getSession();
 			session.setAttribute("loginName", loginMember.getMemberNm());
 			session.setAttribute("loginId", loginId);
-			resp.sendRedirect("registerForm.do");
+			resp.sendRedirect("loginForm.do");
 		} else {
 			resp.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = resp.getWriter();

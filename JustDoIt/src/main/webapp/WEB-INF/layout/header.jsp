@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Page Preloder -->
 <div id="preloder">
 	<div class="loader"></div>
@@ -50,22 +51,33 @@
 								<li><a href="./blog-details.html">Blog Details</a></li>
 							</ul></li>
 						<li><a href="./blog.html">Blog</a></li>
-						<li><a href="./contact.html">Contact</a></li>
+						<li><a href="styleBookList.do">StyleBook</a></li>
 					</ul>
 				</nav>
 			</div>
 			<div class="col-lg-3">
 				<div class="header__right">
-					<div class="header__right__auth">
-						<a href="#">Login</a> <a href="#">Register</a>
-					</div>
+				<c:choose>
+					<c:when test="${sessionScope.loginId == null}">
+						<div class="header__right__auth">
+							<a href="loginForm.do">로그인</a> <a href="registerForm.do">회원가입</a>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="header__right__auth">
+							<a href="#">${sessionScope.loginName } 님 환영합니다</a>
+							<a href="logout.do">로그아웃</a>
+						</div>
 					<ul class="header__right__widget">
 						<li><span class="icon_search search-switch"></span></li>
 						<li><a href="#"><span class="icon_heart_alt"></span>
 								<div class="tip">2</div> </a></li>
 						<li><a href="#"><span class="icon_bag_alt"></span>
 								<div class="tip">2</div> </a></li>
-					</ul>
+					</ul>							
+					</c:otherwise>
+				</c:choose>
+
 				</div>
 			</div>
 		</div>
