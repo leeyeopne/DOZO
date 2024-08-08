@@ -26,6 +26,7 @@ public class loginControl implements Control {
 
 		if(loginMember != null) {
 			HttpSession session = req.getSession();
+			
 			session.setAttribute("loginName", loginMember.getMemberNm());
 			session.setAttribute("loginId", loginId);
 			resp.sendRedirect("loginForm.do");

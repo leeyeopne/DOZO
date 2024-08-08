@@ -18,6 +18,7 @@
 				<div class="tip">2</div> </a></li>
 	</ul>
 	<div class="offcanvas__logo">
+
 		<a href="./index.html"><img src="img/lee.jpg" alt=""></a>
 	</div>
 	<div id="mobile-menu-wrap"></div>
@@ -57,6 +58,7 @@
 			</div>
 			<div class="col-lg-3">
 				<div class="header__right">
+
 				<c:choose>
 					<c:when test="${sessionScope.loginId == null}">
 						<div class="header__right__auth">
@@ -68,6 +70,11 @@
 							<a href="#">${sessionScope.loginName } 님 환영합니다</a>
 							<a href="logout.do">로그아웃</a>
 						</div>
+
+					<div class="header__right__auth">
+						<a href="#">Login</a> <a href="#">Register</a>
+					</div>
+
 					<ul class="header__right__widget">
 						<li><span class="icon_search search-switch"></span></li>
 						<li><a href="#"><span class="icon_heart_alt"></span>
