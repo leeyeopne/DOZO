@@ -11,6 +11,38 @@
 
 </style>
 
+<script>
+function checkId() {
+    let registerId = document.getElementById("registerId");
+    let checkResultSpan = document.getElementById("checkResult");
+    
+    if (registerId.value.length < 1 || registerId.value.length > 20) {
+        checkResultSpan.innerHTML = "<font color=pink>아이디는 4자 이상, 20자 이하이어야 합니다</font>";
+    } else {
+        // Fetch API를 사용한 비동기 요청
+        fetch("idCheck.do?registerId=" + encodeURIComponent(registerId.value))
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {
+                // data에서 필요한 값을 확인하는 부분
+                if (data.retCode === "Success" && data.retVal === "ok") {
+                    checkResultSpan.innerHTML = "<font color=blue>사용 가능</font>";
+                } else {
+                    checkResultSpan.innerHTML = "<font color=red>사용 불가</font>";
+                }
+            })
+            .catch(error => {
+                console.error("There was a problem with the fetch operation:", error);
+                checkResultSpan.innerHTML = "<font color=red>서버 오류</font>";
+            });
+    }
+}
+</script>
+
 <!-- Checkout Section Begin -->
 <section class="checkout spad">
     <div class="container">
@@ -25,7 +57,9 @@
                                 <p>
                                     ID <span>*</span>
                                 </p>
-                                <input type="text" id="registerId" name="registerId">
+                                <input type="text" id="registerId" name="registerId" autofocus>
+                                <button type="button" onclick="checkId()">중복확인</button>
+                                <span id="checkResult"></span>
                             </div>
                         </div>
 
@@ -68,8 +102,8 @@
                             <div class="checkout__form__input">
                                 <p>Address<span>*</span></p>
                                 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="btn btn-primary">
-                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소" class="form-control mb-2" name="registerAddress1">
-                                <input type="text" id="sample4_extraAddress" placeholder="참고항목" class="form-control mb-2" name="registerAddress2">
+                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소" class="form-control mb-2" name="registerAddress1" readonly>
+                                <input type="text" id="sample4_extraAddress" placeholder="참고항목" class="form-control mb-2" name="registerAddress2" readonly>
                                 <input type="text" id="sample4_detailAddress" placeholder="상세주소" class="form-control mb-2" name="registerAddress3">
                             </div>
                             <span id="guide" style="color: #999; display: none"></span>
@@ -78,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" onclick="registerSubmit()" class="site-btn">Register</button>
+            <button type="submit" class="site-btn">Register</button>
         </form>
     </div>
 </section>
@@ -134,13 +168,4 @@
         }).open();
     }
     
-    function registerSubmit() {
-    	let registerId = document.querySelector('#registerId');
-    	let registerPw = document.querySelector('#registerPw');
-    	let registerNm = document.querySelector('#registerNm');
-    	let registerPhone = document.querySelector('#registerPhone');
-    	let registerEmail = document.querySelector('#registerEmail');
-    	
-    	document.getElementById('registrationForm').submit();
-    }
 </script>

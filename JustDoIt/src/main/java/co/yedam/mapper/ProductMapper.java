@@ -8,3 +8,4 @@ public interface ProductMapper {
 	List<ProductVO> selectList();
 //	ProductVO selectProduct(String prodName);
 }
+
