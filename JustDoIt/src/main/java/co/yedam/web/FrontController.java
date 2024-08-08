@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.control.IdCheckControl;
 import co.yedam.control.LoginFormControl;
 import co.yedam.control.RegisterControl;
 import co.yedam.control.RegisterFormControl;
@@ -38,11 +39,14 @@ public class FrontController extends HttpServlet {
 		
 		// 로그인 기능
 		map.put("/login.do", new loginControl());
-	
+		
+		// 아이디 중복 기능
+		map.put("/idCheck.do", new IdCheckControl());
+
 	}
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) //
+	protected void service(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		String uri = req.getRequestURI();
 		String context = req.getContextPath();

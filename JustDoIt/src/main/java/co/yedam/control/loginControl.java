@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import co.yedam.common.Control;
-import co.yedam.service.LoginService;
-import co.yedam.service.LoginServiceImpl;
+import co.yedam.service.MemberService;
+import co.yedam.service.MemberServiceImpl;
 import co.yedam.vo.MemberVO;
 
 public class loginControl implements Control {
@@ -21,9 +21,8 @@ public class loginControl implements Control {
 		String loginId = req.getParameter("loginId");
 		String loginPw = req.getParameter("loginPw");
 
-		LoginService svc = new LoginServiceImpl();
+		MemberService svc = new MemberServiceImpl();
 		MemberVO loginMember = svc.loginCheck(loginId, loginPw);
-
 
 		if(loginMember != null) {
 			HttpSession session = req.getSession();
