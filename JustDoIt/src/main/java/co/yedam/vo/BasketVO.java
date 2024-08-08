@@ -12,5 +12,7 @@ public class BasketVO {
 	private int memberNo;
 	private int prodNo;
 	private Date basketDate;
-
+	private String basketColor;
+	private String basketSize;
+	private int basketQuantity;
 }
