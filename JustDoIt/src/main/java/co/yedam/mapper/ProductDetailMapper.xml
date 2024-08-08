@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.mapper.ProductDetailMapper">
+
+	<select id="productDetailInfo" parameterType="int" resultType="co.yedam.vo.ProductVO">
+		SELECT prod_no,
+			   prod_name,
+			   prod_price,
+			   prod_category,
+			   prod_image1,
+			   prod_image2,
+			   prod_image3,
+			   prod_image4,
+			   prod_exp,
+			   prod_code,
+			   thumbnail	   
+		FROM product
+		WHERE prod_no = #{prodNo}
+	</select>
+	
+</mapper>
