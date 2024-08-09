@@ -26,8 +26,8 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
 		map.put("/productInfo.do", new ProductControl());
+		
 	}
-
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) //
 			throws ServletException, IOException {
@@ -37,6 +37,8 @@ public class FrontController extends HttpServlet {
 
 		Control sub = map.get(path);
 		sub.exec(req, resp);
-
 	}
-}
+	
+	
+} // end of class
+

@@ -33,59 +33,50 @@
 									<div class="card-heading active">
 										<a data-toggle="collapse" data-target="#collapseOne">Women</a>
 									</div>
-									<div id="collapseOne" class="collapse show"
+									<div id="collapseOne" class="collapse"
 										data-parent="#accordionExample">
 										<div class="card-body">
 											<ul>
-												<li><a href="productList.do?cate1=Top&cate2=Women">Top</a></li>
-												<li><a href="productList.do?cate1=Bottom&cate2=Women">Bottom</a></li>
-												<li><a href="productList.do?cate1=Shoes&cate2=Women">Shoes</a></li>
+											
+												<li><a href="productList.do?prodCategory=top&prodCategory2=women&prodStar=0">Top</a></li>
+												<li><a href="productList.do?prodCategory=bottom&prodCategory2=women&prodStar=0">Bottom</a></li>
+												<li><a href="productList.do?prodCategory=shoes&prodCategory2=women&prodStar=0">Shoes</a></li>
 											</ul>
 										</div>
 									</div>
 								</div>
 								<div class="card">
-									<div class="card-heading">
+									<div class="card-heading active">
 										<a data-toggle="collapse" data-target="#collapseTwo">Men</a>
 									</div>
 									<div id="collapseTwo" class="collapse"
 										data-parent="#accordionExample">
 										<div class="card-body">
 											<ul>
-												<li><a href="productList.do?cate1=Top&cate2=Men">Top</a></li>
-												<li><a href="productList.do?cate1=Bottom&cate2=Men">Bottom</a></li>
-												<li><a href="productList.do?cate1=Shoes&cate2=Men">Shoes</a></li>
+												<li><a href="productList.do?prodCategory=top&prodCategory2=men&prodStar=0">Top</a></li>
+												<li><a href="productList.do?prodCategory=bottom&prodCategory2=men&prodStar=0">Bottom</a></li>
+												<li><a href="productList.do?prodCategory=shoes&prodCategory2=men&prodStar=0">Shoes</a></li>
 											</ul>
 										</div>
 									</div>
 								</div>
 								<div class="card">
-									<div class="card-heading">
+									<div class="card-heading active">
 										<a data-toggle="collapse" data-target="#collapseThree">Kids</a>
 									</div>
 									<div id="collapseThree" class="collapse"
 										data-parent="#accordionExample">
 										<div class="card-body">
 											<ul>
-												<li><a href="productList.do?cate1=Top&cate2=Kids">Top</a></li>
-												<li><a href="productList.do?cate1=Bottom&cate2=Kids">Bottom</a></li>
-												<li><a href="productList.do?cate1=Shoes&cate2=Kids">Shoes</a></li>
+												<li><a href="productList.do?prodCategory=top&prodCategory2=kids&prodStar=0">Top</a></li>
+												<li><a href="productList.do?prodCategory=bottom&prodCategory2=kids&prodStar=0">Bottom</a></li>
+												<li><a href="productList.do?prodCategory=shoes&prodCategory2=kids&prodStar=0">Shoes</a></li>
 											</ul>
 										</div>
 									</div>
 								</div>
-								<div class="card">
-									<div class="card-heading">
-										<a data-toggle="collapse" data-target="#collapseFive">Best Collection</a>
-									</div>
-									<div id="collapseFive" class="collapse"
-										data-parent="#accordionExample">
-										<div class="card-body">
-											<ul>
-
-											</ul>
-										</div>
-									</div>
+								<div class="card-heading">
+										<a href="productList.do?prodStar=5">Best Collection</a>
 								</div>
 							</div>
 						</div>
@@ -140,6 +131,43 @@
 	</div>
 </section>
 <!-- 본문 End -->
+<p>${paging }</p>
+<!-- 페이지 부분 -->
+<nav aria-label="Page navigation example">
+	<ul class="pagination justify-content-center">
+	
+		<!-- prev 페이지 -->
+		<c:if test="${paging.prev }">
+			<li class="page-item"><a class="page-link"
+				href="boardList.do?page=${paging.startPage-1}&searchCondition=${searchCondition}&keyword=${keyword}"
+				aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+			</a></li>
+		</c:if>
+
+		<!-- 페이지 갯수만큼 링크 생성 -->
+		<c:forEach var="p" begin="${paging.startPage }" end="${paging.endPage }">
+		  <c:choose>
+		    <c:when test="${paging.page == p }">
+		      <li class="page-item active" aria-current="page">
+		        <span class="page-link">${p }</span>
+	       	  </li>
+		    </c:when>
+		    <c:otherwise>
+		<li class="page-item"><a class="page-link" href="boardList.do?page=${p }&searchCondition=${searchCondition }&keyword=${keyword }">${p }</a></li>
+		    </c:otherwise>
+		  </c:choose>
+		</c:forEach>
+
+		<!-- next 페이지 -->
+		<c:if test="${paging.next }">
+		<li class="page-item">
+		<a class="page-link" href="boardList.do?page=${paging.endPage+1 }&searchCondition=${searchCondition }&keyword=${keyword }" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+		</a>
+		</li>
+		</c:if>
+	</ul>
+</nav>
 
 <!-- Instagram Begin -->
 <div class="instagram">
@@ -147,49 +175,49 @@
 		<div class="row">
 			<div class="col-lg-2 col-md-4 col-sm-4 p-0">
 				<div class="instagram__item set-bg"
-					data-setbg="img/instagram/insta-1.jpg">
+					data-setbg="img/instagram/leftE.jpg">
 					<div class="instagram__text">
-						<i class="fa fa-instagram"></i> <a href="#">@ ashion_shop</a>
+						<i class="fa fa-instagram"></i> <a href="#">@ NIKE</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 p-0">
 				<div class="instagram__item set-bg"
-					data-setbg="img/instagram/insta-2.jpg">
+					data-setbg="img/instagram/leftM1.jpg">
 					<div class="instagram__text">
-						<i class="fa fa-instagram"></i> <a href="#">@ ashion_shop</a>
+						<i class="fa fa-instagram"></i> <a href="#">@ NIKE</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 p-0">
 				<div class="instagram__item set-bg"
-					data-setbg="img/instagram/insta-3.jpg">
+					data-setbg="img/instagram/adCenter.jpg">
 					<div class="instagram__text">
-						<i class="fa fa-instagram"></i> <a href="#">@ ashion_shop</a>
+						<i class="fa fa-instagram"></i> <a href="#">@ NIKE</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 p-0">
 				<div class="instagram__item set-bg"
-					data-setbg="img/instagram/insta-4.jpg">
+					data-setbg="img/instagram/adWCenter.jpg">
 					<div class="instagram__text">
-						<i class="fa fa-instagram"></i> <a href="#">@ ashion_shop</a>
+						<i class="fa fa-instagram"></i> <a href="#">@ NIKE</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 p-0">
 				<div class="instagram__item set-bg"
-					data-setbg="img/instagram/insta-5.jpg">
+					data-setbg="img/instagram/rightW1.jpg">
 					<div class="instagram__text">
-						<i class="fa fa-instagram"></i> <a href="#">@ ashion_shop</a>
+						<i class="fa fa-instagram"></i> <a href="#">@ NIKE</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 p-0">
 				<div class="instagram__item set-bg"
-					data-setbg="img/instagram/insta-6.jpg">
+					data-setbg="img/instagram/rightE.jpg">
 					<div class="instagram__text">
-						<i class="fa fa-instagram"></i> <a href="#">@ ashion_shop</a>
+						<i class="fa fa-instagram"></i> <a href="#">@ NIKE</a>
 					</div>
 				</div>
 			</div>
