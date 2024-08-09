@@ -26,6 +26,7 @@
 		</if>
 		ORDER BY prod_no
 	</select>
+
 	
 	<select id="selectListPaging"
 		parameterType="co.yedam.vo.ProductVO">
@@ -50,6 +51,7 @@
 		select count(1)
 		from tbl_board
 	</select>
+
 
 
 </mapper>
