@@ -33,7 +33,12 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		
+
+		// 상품목록.
+		map.put("/productList.do", new ProductListControl());
+		// 상품상세.
+		map.put("/productInfo.do", new ProductControl());
+
 		
 		// 상품 상세페이지
 		map.put("/productDetailInfo.do", new ProductDetailControl());
@@ -61,7 +66,6 @@ public class FrontController extends HttpServlet {
 		map.put("/addWishlist.do", new WishlistControl());
 
 	}
-
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
@@ -71,6 +75,8 @@ public class FrontController extends HttpServlet {
 
 		Control sub = map.get(path);
 		sub.exec(req, resp);
-
 	}
-}
+	
+	
+} // end of class
+

@@ -14,5 +14,8 @@ public class ProductVO {
 	private String prodExp;
 	private String prodCode;
 	private String thumbnail;
+	private String prodCategory2;
 	private int prodStar;
 }
+
+
