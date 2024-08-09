@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.yedam.mapper.WishlistMapper">
  <!-- SQL 쿼리: BasketMapper.xml에서 insertBasket 쿼리를 정의하고 장바구니에 상품을 추가합니다. -->
-	<insert id="insertBasket">
-		insert into wishlist (wish_no, wish_color, wish_size, wish_quantity)
-		values(wishlist_seq.nextval, #{wishColor}, #{wishSize}, #{wishQuantity})
+	<insert id="addWishlist" parameterType="int">
+		insert into wishlist (wish_no, prod_no)
+		values(wishlist_seq.nextval, #{prodNo})
 	</insert>
 
 </mapper>

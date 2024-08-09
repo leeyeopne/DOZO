@@ -2,11 +2,13 @@ package co.yedam.common;
 
 import org.apache.ibatis.session.SqlSession;
 
-import co.yedam.mapper.ProductMapper;
+import co.yedam.mapper.WishlistMapper;
+import co.yedam.vo.WishlistVO;
 
 public class AppTest {
 
 	public static void main(String[] args) {
+
 		/*
 		SqlSession sqlSession = DataSource.getInstance().openSession(true); // 자동 커밋.
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
@@ -21,6 +23,7 @@ public class AppTest {
 		 * mapper.selectList("top", "women").forEach(product -> {
 		 * System.out.println(product); });
 		 */
+
 	}
 
 }
