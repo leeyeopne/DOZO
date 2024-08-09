@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -14,7 +15,7 @@
 <!-- Google Font -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Cookie&display=swap"
-	rel="stylesheet">
+	rel="stylesheet">	
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
@@ -35,28 +36,6 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
-	<!-- Offcanvas Menu Begin -->
-	<div class="offcanvas-menu-overlay"></div>
-	<div class="offcanvas-menu-wrapper">
-		<div class="offcanvas__close">+</div>
-		<ul class="offcanvas__widget">
-			<li><span class="icon_search search-switch"></span></li>
-			<li><a href="#"><span class="icon_heart_alt"></span>
-					<div class="tip">2</div> </a></li>
-			<li><a href="#"><span class="icon_bag_alt"></span>
-					<div class="tip">2</div> </a></li>
-		</ul>
-		<div class="offcanvas__logo">
-			<a href="./index.html"><img src="img/logo.png" alt=""></a>
-		</div>
-		<div id="mobile-menu-wrap"></div>
-		<div class="offcanvas__auth">
-			<a href="#">Login</a> <a href="#">Register</a>
-		</div>
-	</div>
-	<!-- Offcanvas Menu End -->
-
 	<!-- Header Section Begin -->
 	<header class="header">
 		<div class="container-fluid">
@@ -96,7 +75,7 @@
 				<div class="col-lg-3">
 					<div class="header__right">
 						<div class="header__right__auth">
-							<a href="login.do">로그인</a> <a href="register.do">회원가입</a>
+							<a href="loginForm.do">로그인</a> <a href="registerForm.do">회원가입</a>
 						</div>
 						<ul class="header__right__widget">
 							<li><span class="icon_search search-switch"></span></li>
@@ -144,44 +123,46 @@
 				<div class="col-lg-8 col-md-8">
 					<ul class="filter__controls">
 						<li class="active" data-filter="*">All</li>
-						<li data-filter=".women">Women’s</li>
+						<li data-filter=".women">Women’s</li>	
 						<li data-filter=".men">Men’s</li>
 						<li data-filter=".kid">Kid’s</li>
 						<li data-filter=".accessories">Best Seller</li>
 					</ul>
 				</div>
 			</div>
-			<div class="row property__gallery">
-
-				<div
-					class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-					<div class="product__item sale">
-						<div class="product__item__pic set-bg"
-							data-setbg="img/product/product-8.jpg">
-						<!-- 	<div class="label">Sale</div> -->
-							<ul class="product__hover">
-								<li><a href="img/product/product-8.jpg" class="image-popup"><span
-										class="arrow_expand"></span></a></li>
-								<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-								<li><a href="#"><span class="icon_bag_alt"></span></a></li>
-							</ul>
-						</div>
-						<div class="product__item__text">
-							<h6>
-								<a href="#">Water resistant backpack</a>
-							</h6>
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
+			<c:forEach var="product" items="${productList }">
+				<div class="row property__gallery">
+					<div
+						class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
+						<div class="product__item sale">
+							<div class="product__item__pic set-bg"
+								data-setbg="img/shop/${product.prodImage } ">
+								<!-- 	<div class="label">Sale</div> -->
+								<ul class="product__hover">
+									<li><a href="img/product/product-8.jpg"
+										class="image-popup"><span class="arrow_expand"></span></a></li>
+									<li><a href="#"><span class="icon_heart_alt"></span></a></li>
+									<li><a href="#"><span class="icon_bag_alt"></span></a></li>
+								</ul>
 							</div>
-							<div class="product__price">
-								$ 49.0 <span>$ 59.0</span>
+							<div class="product__item__text">
+								<h6>
+									<a href="#">${product.prodName}</a>
+								</h6>
+								<div class="rating">
+									<c:forEach begin="1" end="${product.prodStar }">
+										<i class="fa fa-star"></i>
+									</c:forEach>
+								</div>
+								<!--  <div class="product__price">
+									$ 49.0-->
+								<span>${product.price}</span>
+								<!--  </div>-->
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</section>
 	<!-- Product Section End -->
