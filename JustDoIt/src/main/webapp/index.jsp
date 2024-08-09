@@ -15,7 +15,7 @@
 <!-- Google Font -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Cookie&display=swap"
-	rel="stylesheet">	
+	rel="stylesheet">
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
@@ -42,48 +42,71 @@
 			<div class="row">
 				<div class="col-xl-3 col-lg-2">
 					<div class="header__logo">
-						<a href="./index.jsp"><img src="img/nikelogo5.png" alt=""></a>
+						<a href="./"><img src="img/nikelogo5.png" alt=""></a>
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-7">
 					<nav class="header__menu">
 						<ul>
-							<li class="active"><a href="./index.jsp">Home</a></li>
-							<li><a href="#">Women’s</a>
+							<li class="active"><a href="./">Home</a></li>
+							<li><a
+								href="productList.do?prodCategory=top&prodCategory2=women&prodStar=0">Women’s</a>
 								<ul class="dropdown">
-									<li><a href="./product-details.html">Top</a></li>
-									<li><a href="./shop-cart.html">pants</a></li>
-									<li><a href="./checkout.html">shoes</a></li>
+									<li><a
+										href="productList.do?prodCategory=top&prodCategory2=women&prodStar=0">Top</a></li>
+									<li><a
+										href="productList.do?prodCategory=bottom&prodCategory2=women&prodStar=0">pants</a></li>
+									<li><a
+										href="productList.do?prodCategory=shoes&prodCategory2=women&prodStar=0">shoes</a></li>
 								</ul></li>
-							<li><a href="#">Men’s</a>
+							<li><a
+								href="productList.do?prodCategory=top&prodCategory2=men&prodStar=0">Men’s</a>
 								<ul class="dropdown">
-									<li><a href="./product-details.html">Top</a></li>
-									<li><a href="./shop-cart.html">pants</a></li>
-									<li><a href="./checkout.html">shoes</a></li>
+									<li><a
+										href="productList.do?prodCategory=top&prodCategory2=men&prodStar=0">Top</a></li>
+									<li><a
+										href="productList.do?prodCategory=bottom&prodCategory2=men&prodStar=0">pants</a></li>
+									<li><a
+										href="productList.do?prodCategory=shoes&prodCategory2=men&prodStar=0">shoes</a></li>
 								</ul></li>
-							<li><a href="./shop.html">Kids</a>
+							<li><a
+								href="productList.do?prodCategory=top&prodCategory2=kids&prodStar=0">Kids</a>
 								<ul class="dropdown">
-									<li><a href="./product-details.html">Top</a></li>
-									<li><a href="./shop-cart.html">Pants</a></li>
-									<li><a href="./checkout.html">shoes</a></li>
+									<li><a
+										href="productList.do?prodCategory=top&prodCategory2=kids&prodStar=0">Top</a></li>
+									<li><a
+										href="productList.do?prodCategory=bottom&prodCategory2=kids&prodStar=0">Pants</a></li>
+									<li><a
+										href="productList.do?prodCategory=shoes&prodCategory2=kids&prodStar=0">shoes</a></li>
 								</ul></li>
-							<li><a href="./blog.html">Blog</a></li>
-							<li><a href="./contact.html">Contact</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
 				<div class="col-lg-3">
 					<div class="header__right">
-						<div class="header__right__auth">
-							<a href="loginForm.do">로그인</a> <a href="registerForm.do">회원가입</a>
-						</div>
-						<ul class="header__right__widget">
-							<li><span class="icon_search search-switch"></span></li>
-							<li><a href="#"><span class="icon_heart_alt"></span>
-									<div class="tip">2</div> </a></li>
-							<li><a href="#"><span class="icon_bag_alt"></span>
-									<div class="tip">2</div> </a></li>
-						</ul>
+						<c:choose>
+							<c:when test="${sessionScope.loginId == null}">
+								<div class="header__right__auth">
+									<a href="loginForm.do">로그인</a> <a href="registerForm.do">회원가입</a>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div class="header__right__auth">
+									<a href="#">${sessionScope.loginName } 님 환영합니다</a> <a
+										href="logout.do">로그아웃</a>
+								</div>
+
+								<ul class="header__right__widget">
+									<li><span class="icon_search search-switch"></span></li>
+									<li><a href="#"><span class="icon_heart_alt"></span>
+											<div class="tip">2</div> </a></li>
+									<li><a href="#"><span class="icon_bag_alt"></span>
+											<div class="tip">2</div> </a></li>
+								</ul>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 			</div>
@@ -123,7 +146,7 @@
 				<div class="col-lg-8 col-md-8">
 					<ul class="filter__controls">
 						<li class="active" data-filter="*">All</li>
-						<li data-filter=".women">Women’s</li>	
+						<li data-filter=".women">Women’s</li>
 						<li data-filter=".men">Men’s</li>
 						<li data-filter=".kid">Kid’s</li>
 						<li data-filter=".accessories">Best Seller</li>

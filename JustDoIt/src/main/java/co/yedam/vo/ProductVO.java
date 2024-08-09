@@ -1,8 +1,6 @@
 package co.yedam.vo;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 
 @Data
@@ -11,9 +9,15 @@ public class ProductVO {
 	private String prodName;
 	private String prodPrice;
 	private String prodCategory;
-	private String prodImage;
+	private String prodImage1;
+	private String prodImage2;
+	private String prodImage3;
+	private String prodImage4;
 	private String prodExp;
 	private String prodCode;
 	private String thumbnail;
+	private String prodCategory2;
 	private int prodStar;
 }
+
+
