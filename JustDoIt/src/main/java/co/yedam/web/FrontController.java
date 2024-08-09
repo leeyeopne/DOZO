@@ -67,7 +67,6 @@ public class FrontController extends HttpServlet {
 		map.put("/styleBookList.do", new StyleBookListControl());
 		map.put("/idCheck.do", new IdCheckControl());
 
-
 		// 장바구니 데이터 추가
 		map.put("/addBasket.do", new BasketControl());
 
