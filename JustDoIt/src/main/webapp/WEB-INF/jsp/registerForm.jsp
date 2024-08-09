@@ -14,7 +14,7 @@ function checkId() {
     let registerId = document.getElementById("registerId");
     let checkResultSpan = document.getElementById("checkResult");
     
-    if (registerId.value.length < 1 || registerId.value.length > 20) {
+    if (registerId.value.length < 4 || registerId.value.length > 20) {
         checkResultSpan.innerHTML = "<font color=pink>아이디는 4자 이상, 20자 이하이어야 합니다</font>";
     } else {
         // Fetch API를 사용한 비동기 요청
@@ -39,6 +39,37 @@ function checkId() {
             });
     }
 }
+
+function checkPw(){
+	 
+    let pw = document.getElementById('registerPw').value;
+    let SC = ["!","@","#","$","%"];
+    let check_SC = 0;
+
+    if(pw.length < 6 || pw.length>16){
+        window.alert('비밀번호는 6글자 이상, 16글자 이하만 이용 가능합니다.');
+        document.getElementById('pw').value='';
+    }
+    for(var i=0;i<SC.length;i++){
+        if(pw.indexOf(SC[i]) != -1){
+            check_SC = 1;
+        }
+    }
+    if(check_SC == 0){
+        window.alert('!,@,#,$,% 의 특수문자가 들어가 있지 않습니다.')
+        document.getElementById('pw').value='';
+    }
+    if(document.getElementById('registerPw').value !='' && document.getElementById('registerPw2').value!=''){
+        if(document.getElementById('registerPw').value==document.getElementById('registerPw2').value){
+            document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+            document.getElementById('check').style.color='blue';
+        }
+        else{
+            document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+            document.getElementById('check').style.color='red';
+        }
+    }
+}
 </script>
 
 <!-- Checkout Section Begin -->
@@ -51,7 +82,6 @@ function checkId() {
 					<h5>Register</h5>
 					<div class="row">
 
-<<<<<<< HEAD
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="checkout__form__input">
 								<p>
@@ -60,18 +90,61 @@ function checkId() {
 								<input type="text" id="registerId" name="registerId">
 							</div>
 						</div>
-=======
+
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="checkout__form__input">
                                 <p>
-                                    ID <span>*</span>
+                                    아이디 <span>*</span>
                                 </p>
                                 <input type="text" id="registerId" name="registerId" autofocus>
                                 <button type="button" onclick="checkId()">중복확인</button>
                                 <span id="checkResult"></span>
                             </div>
                         </div>
->>>>>>> refs/heads/master
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="checkout__form__input">
+                                <p>
+                                    비밀번호 <span>*</span>
+                                </p>
+                                <input type="password" id="registerPw" name="registerPw" onchange="checkPw()">
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="checkout__form__input">
+                                <p>
+                                    비밀번호 확인 <span>*</span>
+                                </p>
+                                <input type="password" id="registerPw2" name="registerPw2" onchange="checkPw()">
+                                <span id="check"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="checkout__form__input">
+                                <p>
+                                    Name <span>*</span>
+                                </p>
+                                <input type="text" id="registerNm" name="registerNm">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="checkout__form__input">
+                                <p>
+                                    Phone <span>*</span>
+                                </p>
+                                <input type="text" id="registerPhone" name="registerPhone">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="checkout__form__input">
+                                <p>Email <span>*</span></p>
+                                <input type="text" id="registerEmail" name="registerEmail">
+                            </div>
+                        </div>
 
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="checkout__form__input">
@@ -109,7 +182,6 @@ function checkId() {
 							</div>
 						</div>
 
-<<<<<<< HEAD
 						<!-- 주소 -->
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="checkout__form__input">
@@ -127,7 +199,7 @@ function checkId() {
 							</div>
 							<span id="guide" style="color: #999; display: none"></span>
 						</div>
-=======
+
                         <!-- 주소 -->
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="checkout__form__input">
@@ -139,23 +211,23 @@ function checkId() {
                             </div>
                             <span id="guide" style="color: #999; display: none"></span>
                         </div>
->>>>>>> refs/heads/master
 
-<<<<<<< HEAD
+
+
 					</div>
 				</div>
 			</div>
 			<button type="button" onclick="registerSubmit()" class="site-btn">Register</button>
 		</form>
 	</div>
-=======
+
                     </div>
                 </div>
             </div>
             <button type="submit" class="site-btn">Register</button>
         </form>
     </div>
->>>>>>> refs/heads/master
+
 </section>
 <!-- Checkout Section End -->
 
@@ -193,7 +265,7 @@ function checkId() {
 
 						document.getElementById("sample4_roadAddress").value = roadAddr;
 
-<<<<<<< HEAD
+
 						if (roadAddr !== '') {
 							document.getElementById("sample4_extraAddress").value = extraRoadAddr;
 						} else {
@@ -224,7 +296,7 @@ function checkId() {
 
 		document.getElementById('registrationForm').submit();
 	}
-=======
+
                 var guideTextBox = document.getElementById("guide");
                 if (data.autoRoadAddress) {
                     var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
@@ -238,5 +310,5 @@ function checkId() {
         }).open();
     }
     
->>>>>>> refs/heads/master
+
 </script>

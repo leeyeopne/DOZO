@@ -96,7 +96,7 @@
 				<div class="col-lg-3">
 					<div class="header__right">
 						<div class="header__right__auth">
-							<a href="login.do">로그인</a> <a href="register.do">회원가입</a>
+							<a href="loginForm.do">로그인</a> <a href="registerForm.do">회원가입</a>
 						</div>
 						<ul class="header__right__widget">
 							<li><span class="icon_search search-switch"></span></li>
