@@ -15,12 +15,12 @@ public class AppTest {
 		});
 		 * 
 		 */
-		SqlSession sqlSession = DataSource.getInstance().openSession(true); // 자동 커밋.
-		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
-		mapper.selectList("top", "women").forEach(product -> {
-			System.out.println(product);
-		});
-
+		/*
+		 * SqlSession sqlSession = DataSource.getInstance().openSession(true); // 자동 커밋.
+		 * ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		 * mapper.selectList("top", "women").forEach(product -> {
+		 * System.out.println(product); });
+		 */
 	}
 
 }
