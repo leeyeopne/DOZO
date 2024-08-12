@@ -2,10 +2,10 @@ package co.yedam.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSource;
-import co.yedam.common.SearchDTO;
 import co.yedam.mapper.ProductMapper;
 import co.yedam.vo.ProductVO;
 
@@ -26,8 +26,14 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public int totalCount() {
-		return mapper.selectTotalCount();
+	public int totalCount(int prodStar) {
+		return mapper.selectTotalCount(prodStar);
+	}
+
+
+	@Override
+	public List<ProductVO> productListPaging(String prodCategory, String prodCategory2, int page, int prodStar) {
+		return mapper.selectListPaging(prodCategory, prodCategory2, page, prodStar);
 	}
 
 

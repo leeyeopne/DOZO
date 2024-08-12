@@ -4,31 +4,34 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.yedam.mapper.ProductMapper">
 	<!-- <select id="selectList" resultType="co.yedam.vo.ProductVO" parameterType="co.yedam.vo.ProductVO"> -->
-	<select id="selectList">
+	<select id="selectList" resultType="co.yedam.vo.ProductVO">
 		select prod_no
 		,prod_name
 		,prod_price
 		,prod_category
-		,prod_image
+		,prod_image1
+		,prod_image2
+		,prod_image3
+		,prod_image4
 		,prod_exp
 		,prod_code
 		,thumbnail
-		,prod_star
 		,prod_category2
+		,prod_star
 		FROM product
 		where 1=1
 		<if test="prodCategory != null">
 			and prod_category = #{prodCategory}
-			and prod_category2 = #{prodCategory2}
+			and prod_category2 =
+			#{prodCategory2}
 		</if>
 		<if test="prodStar != 0">
-			and prod_star = 5
+			and prod_star = #{prodStar}
 		</if>
 		ORDER BY prod_no
 	</select>
-	
-	<select id="selectListPaging"
-		parameterType="co.yedam.vo.ProductVO">
+
+	<select id="selectListPaging" resultType="co.yedam.vo.ProductVO">
 		SELECT b.*
 		FROM
 		(
@@ -36,19 +39,32 @@
 		FROM (
 		SELECT *
 		FROM product
+		where 1=1
+		<if test="prodCategory != null">
+			and prod_category = #{prodCategory}
+			and prod_category2 =
+			#{prodCategory2}
+		</if>
+		<if test="prodStar != 0">
+			and prod_star = #{prodStar}
+		</if>
 		ORDER BY prod_no DESC
 		) a
 		) b
-		WHERE b.rn> (#{page} -1 ) * 6
+		WHERE b.rn> (#{page} -1 )
+		* 6
         <![CDATA[
             AND b.rn <= (#{page} * 6)
         ]]>
 	</select>
-	
-	<select id="selectTotalCount"
-		parameterType="co.yedam.vo.ProductVO" resultType="int">
+
+	<select id="selectTotalCount" parameterType="int" resultType="int">
 		select count(1)
-		from tbl_board
+		from product
+		WHERE 1=1
+		<if test="prodStar != 0">
+			and prod_star = #{prodStar}
+		</if>
 	</select>
 
 

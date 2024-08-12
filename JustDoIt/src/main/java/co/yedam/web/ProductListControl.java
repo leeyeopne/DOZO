@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
 import co.yedam.common.PageDTO;
-import co.yedam.common.SearchDTO;
 import co.yedam.service.ProductService;
 import co.yedam.service.ProductServiceImpl;
 import co.yedam.vo.ProductVO;
@@ -22,27 +21,25 @@ public class ProductListControl implements Control {
 		String prodCategory2 = req.getParameter("prodCategory2"); 
 		String prodStar = req.getParameter("prodStar"); 
 		
+		ProductService svc = new ProductServiceImpl();
+		
 		String page = req.getParameter("page");
 		page = page == null ? "1" : page;
 		
-		SearchDTO search = new SearchDTO();
-		search.setPage(Integer.parseInt(page));
+		int totalCnt = svc.totalCount(Integer.parseInt(prodStar));
+		
+		PageDTO pageDTO = new PageDTO(Integer.parseInt(page),totalCnt );
+		
+		
 		//prodCategory = prodCategory == null ? "top" : prodCategory;
 		//prodCategory2 = prodCategory2 == null ? "women" : prodCategory2;
 		prodStar = prodStar == null ? "0" : prodStar;
 		
-		ProductService svc = new ProductServiceImpl();
-		List<ProductVO> list = svc.productList(prodCategory, prodCategory2, Integer.parseInt(prodStar));
+		//List<ProductVO> list = svc.productList(prodCategory, prodCategory2, Integer.parseInt(prodStar));
+		List<ProductVO> list = svc.productListPaging(prodCategory, prodCategory2, Integer.parseInt(page), Integer.parseInt(prodStar));
 		
-		
-		
-		
+		req.setAttribute("page", pageDTO);
 		req.setAttribute("productList", list);
-		
-		// paging
-		int totalCnt = svc.totalCount();
-		PageDTO pageDTO = new PageDTO(Integer.parseInt(page), totalCnt);
-		req.setAttribute("paging", pageDTO);
 		
 		req.getRequestDispatcher("product/productList.tiles").forward(req, resp); // 페이지 재지정
 	}
