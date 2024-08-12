@@ -91,7 +91,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="product__item">
 								<div class="product__item__pic set-bg"
-									data-setbg="img/shop/${product.prodImage }">
+									data-setbg="img/shop/${product.thumbnail }">
 									<!--  <div class="label new">New</div>-->
 									<ul class="product__hover">
 										<li><a href="img/shop/" class="image-popup"> <span class="arrow_expand"></span>
@@ -121,8 +121,7 @@
 
 			<div class="col-lg-12 text-center">
 				<div class="pagination__option">
-					<a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#"><i
-						class="fa fa-angle-right"></i></a>
+					<a href="productList.do?page="${page.page}>1</a> <a href="#"><i class="fa fa-angle-right"></i></a>
 				</div>
 			</div>
 		</div>

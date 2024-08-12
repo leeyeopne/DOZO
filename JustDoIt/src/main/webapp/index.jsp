@@ -79,7 +79,7 @@
 									<li><a
 										href="productList.do?prodCategory=shoes&prodCategory2=kids&prodStar=0">shoes</a></li>
 								</ul></li>
-							<li><a href="#">Blog</a></li>
+							<li><a href="styleBookList.do">STYLE BOOK</a></li>
 							<li><a href="#">Contact</a></li>
 						</ul>
 					</nav>
