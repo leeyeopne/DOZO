@@ -29,6 +29,12 @@ public class loginControl implements Control {
 			
 			session.setAttribute("loginName", loginMember.getMemberNm());
 			session.setAttribute("loginId", loginId);
+			
+			
+			session.setAttribute("memberNo", loginMember.getMemberNo()); // memberNo 저장
+
+			
+			
 			resp.sendRedirect("./");
 		} else {
 			resp.setContentType("text/html; charset=UTF-8");

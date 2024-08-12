@@ -11,7 +11,18 @@ public class WishlistServiceImpl implements WishlistService {
 	WishlistMapper mapper = sqlSession.getMapper(WishlistMapper.class);
 
 	@Override
-	public boolean addWishlist(int prodNo) {
-		return mapper.addWishlist(prodNo) == 1;
+	public boolean addWishlist(WishlistVO wvo) {
+		return mapper.addWishlist(wvo) == 1;
 	}
 }
+
+
+//public class WishlistServiceImpl implements WishlistService {
+//	SqlSession sqlSession = DataSource.getInstance().openSession(true);
+//	WishlistMapper mapper = sqlSession.getMapper(WishlistMapper.class);
+//
+//	@Override
+//	public boolean addWishlist(int prodNo) {
+//		return mapper.addWishlist(prodNo) == 1;
+//	}
+//}

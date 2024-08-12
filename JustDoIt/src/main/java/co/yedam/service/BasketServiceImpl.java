@@ -1,5 +1,7 @@
 package co.yedam.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSource;
@@ -14,8 +16,23 @@ public class BasketServiceImpl implements BasketService {
 	
 	@Override
 	public boolean addBasket(BasketVO basket) {
-		// 장바구니에 추가: BasketMapper를 통해 데이터베이스에 장바구니에 상품을 추가하는 SQL 쿼리를 실행합니다.
 		return mapper.insertBasket(basket)==1; // ==1 넣으면 true가 됨.
+	}
+
+
+
+	@Override
+	public List<BasketVO> basketList(int memberNo) {
+		// TODO Auto-generated method stub
+		return mapper.selectBasket(memberNo);
+	}
+
+
+
+	@Override
+	public boolean removeBasket(int cartNo) {
+		// TODO Auto-generated method stub
+		return mapper.deleteBasket(cartNo)==1;
 	}
 
 }

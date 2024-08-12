@@ -11,11 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
-
 import co.yedam.control.BasketControl;
-
+import co.yedam.control.BasketFormControl;
+import co.yedam.control.DeleteBasketControl;
 import co.yedam.control.IdCheckControl;
-
 import co.yedam.control.LoginFormControl;
 import co.yedam.control.ProductDetailControl;
 import co.yedam.control.RegisterControl;
@@ -73,7 +72,15 @@ public class FrontController extends HttpServlet {
 
 		// 장바구니 데이터 추가
 		map.put("/addBasket.do", new BasketControl());
+		// 장바구니 페이지
+		map.put("/basketForm.do", new BasketFormControl());
+		 
+		// 장바구니 삭제
+		map.put("/removeBasket.do", new DeleteBasketControl());
 
+		
+		
+		
 		// 위시리스트 데이터 추가
 		map.put("/addWishlist.do", new WishlistControl());
 
