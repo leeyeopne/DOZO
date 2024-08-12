@@ -1,5 +1,7 @@
 package co.yedam.vo;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -14,6 +16,5 @@ public class MemberVO {
 	private String address1;
 	private String address2;
 	private String address3;
-
-
+	private Date creationDate;
 }
