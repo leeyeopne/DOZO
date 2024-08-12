@@ -4,4 +4,9 @@
 /zzz/
 /.classpath
 /.project
+<<<<<<< HEAD
+/.apt_generated/
+/.apt_generated_tests/
+=======
 /bin/
+>>>>>>> branch 'master' of https://github.com/leeyeopne/DOZO.git

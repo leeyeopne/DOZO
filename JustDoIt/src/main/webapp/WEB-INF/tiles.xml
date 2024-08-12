@@ -19,7 +19,11 @@
     <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
   </definition>
   
-  <definition name="WILDCARD:style/*" extends="myapp.user">
+  <definition name="WILDCARD:product/*" extends="myapp.user">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>	
+  
+  <definition name="WILDCARD:styleBook/*" extends="myapp.user">
     <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
   </definition>
 
@@ -33,6 +37,9 @@
 	<definition name="WILDCARD:product/*" extends="myapp.user">
 		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
 	</definition>
+
+
+
 
 
 </tiles-definitions>
