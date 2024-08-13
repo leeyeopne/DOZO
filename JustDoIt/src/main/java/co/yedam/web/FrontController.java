@@ -41,7 +41,6 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-
 		// 상품목록.
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
@@ -103,7 +102,6 @@ public class FrontController extends HttpServlet {
 
 		// 위시리스트 데이터 추가
 		map.put("/addWishlist.do", new WishlistControl());
-
 	}
 
 	@Override

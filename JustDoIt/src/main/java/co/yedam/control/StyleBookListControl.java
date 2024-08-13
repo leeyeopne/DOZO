@@ -23,7 +23,7 @@ public class StyleBookListControl implements Control {
 		page = page == null ? "1" : page;
 		String sc = req.getParameter("searchCondition");
 		String kw = req.getParameter("keyword");
-		
+		int pCnt = 6;
 		SearchDTO search = new SearchDTO();
 		search.setKeyword(kw);
 		search.setPage(Integer.parseInt(page));
@@ -36,7 +36,7 @@ public class StyleBookListControl implements Control {
 		
 		// paging
 		int totalCnt = svc.totalCount(search);
-		PageDTO pageDTO = new PageDTO(Integer.parseInt(page), totalCnt);
+		PageDTO pageDTO = new PageDTO(Integer.parseInt(page), totalCnt, pCnt);
 		req.setAttribute("paging", pageDTO);
 		// JSP페이지에서 이용하기 위해서 attribute에 전달
 		req.setAttribute("searchCondition", sc);
