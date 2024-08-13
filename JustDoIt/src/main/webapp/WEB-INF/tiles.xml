@@ -3,28 +3,43 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
+  
+  <definition name="myapp.user" template="/WEB-INF/layout/template.jsp">
+    <put-attribute name="title" value="Shop Homepage - Start Bootstrap Template" />
+    <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/layout/body.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+  </definition>
+  
+  <definition name="WILDCARD:register/*" extends="myapp.user">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>
+  
+  <definition name="WILDCARD:login/*" extends="myapp.user">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>
+  
+  <definition name="WILDCARD:product/*" extends="myapp.user">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>	
+  
+  <definition name="WILDCARD:styleBook/*" extends="myapp.user">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>
 
-	<definition name="myapp.user"
-		template="/WEB-INF/layout/template.jsp">
-		<put-attribute name="title"
-			value="Shop Homepage - Start Bootstrap Template" />
-		<put-attribute name="header"
-			value="/WEB-INF/layout/header.jsp" />
-		<put-attribute name="body"
-			value="/WEB-INF/layout/body.jsp" />
-		<put-attribute name="footer"
-			value="/WEB-INF/layout/footer.jsp" />
+	<definition name="myapp.user" template="/WEB-INF/layout/template.jsp">
+		<put-attribute name="title" value="Shop Homepage - Start Bootstrap Template" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/layout/body.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
 	</definition>
 
 	<definition name="WILDCARD:product/*" extends="myapp.user">
 		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
 	</definition>
 
-	<definition name="WILDCARD:register/*" extends="myapp.user">
-		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
-	</definition>
 
-	<definition name="WILDCARD:login/*" extends="myapp.user">
-		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
-	</definition>
+
+
+
 </tiles-definitions>

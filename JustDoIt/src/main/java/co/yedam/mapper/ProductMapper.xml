@@ -31,37 +31,39 @@
 		ORDER BY prod_no
 	</select>
 
-	<select id="selectListPaging" resultType="co.yedam.vo.ProductVO">
+	<select id="selectListPaging" parameterType="co.yedam.common.SearchDTO" resultType="co.yedam.vo.ProductVO">
 		SELECT b.*
 		FROM
 		(
 		SELECT rownum AS rn, a.*
 		FROM (
-		SELECT *
-		FROM product
-		where 1=1
-		<if test="prodCategory != null">
-			and prod_category = #{prodCategory}
-			and prod_category2 =
-			#{prodCategory2}
-		</if>
-		<if test="prodStar != 0">
-			and prod_star = #{prodStar}
-		</if>
-		ORDER BY prod_no DESC
-		) a
+		      SELECT *
+		      FROM product
+		      where 1=1
+		      <if test="prodCategory != null">   
+			  and prod_category = #{prodCategory}
+			  and prod_category2 = #{prodCategory2}
+		      </if>
+		      <if test="prodStar != 0">
+			  and prod_star = #{prodStar}
+		      </if>
+		      ORDER BY prod_no DESC
+		     ) a
 		) b
-		WHERE b.rn> (#{page} -1 )
-		* 6
+		WHERE b.rn> (#{page} -1 ) * 12
         <![CDATA[
-            AND b.rn <= (#{page} * 6)
+        AND b.rn <= (#{page} * 12)
         ]]>
 	</select>
 
-	<select id="selectTotalCount" parameterType="int" resultType="int">
+	<select id="selectTotalCount" parameterType="co.yedam.common.SearchDTO" resultType="int">
 		select count(1)
-		from product
+		from product    
 		WHERE 1=1
+		<if test="prodCategory != null">
+			and prod_category = #{prodCategory}
+			and prod_category2 = #{prodCategory2}
+		</if>
 		<if test="prodStar != 0">
 			and prod_star = #{prodStar}
 		</if>

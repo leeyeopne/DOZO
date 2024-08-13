@@ -94,6 +94,7 @@
 				</div>
 			</div>
 			<!-- 중앙페이지 -->
+			${aPage }
 			<div class="col-lg-9 col-md-9">
 				<div class="row">
 					<c:forEach var="product" items="${productList }">
@@ -131,19 +132,24 @@
 
 			<div class="col-lg-12 text-center">
 				<div class="pagination__option">
-
+				<%
+					String prodCategory = request.getParameter("prodCategory");
+					String prodCategory2 = request.getParameter("prodCategory2"); 
+					String prodStar = request.getParameter("prodStar");
+				%>
+				
 					<c:if test="${page.prev }">
-						<a href="productList.do?page=${page.startPage - 1}&prodStar=5"><i
+						<a href="productList.do?page=${page.startPage - 1}&prodStar=<%=prodStar%>&prodCategory2=<%=prodCategory2%>&prodCategory=<%=prodCategory%>"><i
 							class="fa fa-angle-left"></i></a>
 					</c:if>
 					<!-- 페이지 갯수만큼 링크 생성 -->
 					<c:forEach var="p" begin="${page.startPage }"
 						end="${page.endPage }">
-						<a href="productList.do?page=${p}&prodStar=5">${p}</a>
+						<a href="productList.do?page=${p}&prodStar=<%=prodStar%>&prodCategory2=<%=prodCategory2%>&prodCategory=<%=prodCategory%>">${p}</a>
 					</c:forEach>
 					<!-- next 페이지 -->
 					<c:if test="${page.next }">
-						<a href="productList.do?page=${page.endPage + 1}&prodStar=5"><i
+						<a href="productList.do?page=${page.endPage + 1}&prodStar=<%=prodStar%>&prodCategory2=<%=prodCategory2%>&prodCategory=<%=prodCategory%>"><i
 							class="fa fa-angle-right"></i></a>
 					</c:if>
 				</div>
@@ -199,7 +205,7 @@
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 p-0">
 				<div class="instagram__item set-bg"
-					data-setbg="img/instagram/rightE.jpg">
+					data-setbg="img/instagram/rightE2.jpg">
 					<div class="instagram__text">
 						<i class="fa fa-instagram"></i> <a href="#">@ NIKE</a>
 					</div>

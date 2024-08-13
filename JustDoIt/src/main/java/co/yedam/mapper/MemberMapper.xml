@@ -5,8 +5,8 @@
 <mapper namespace="co.yedam.mapper.MemberMapper">
 
 	<insert id="registerMember" parameterType="co.yedam.vo.MemberVO">
-        INSERT INTO member (member_no, member_id, member_pw, member_nm, phone, email, address)
-        VALUES (board_seq.nextVal, #{memberId}, #{memberPw}, #{memberNm}, #{phone}, #{email}, #{address1}||#{address2}||#{address3})
+        INSERT INTO member (member_no, member_id, member_pw, member_nm, phone, email, address, creation_date)
+        VALUES (member_seq.nextVal, #{memberId}, #{memberPw}, #{memberNm}, #{phone}, #{email}, #{address1}||#{address2}||#{address3}, SYSDATE)
 	</insert>
 	
 	<select id="selectMember" resultType="co.yedam.vo.MemberVO"> 

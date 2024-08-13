@@ -6,12 +6,23 @@ import co.yedam.common.DataSource;
 import co.yedam.mapper.WishlistMapper;
 import co.yedam.vo.WishlistVO;
 
-public class WishlistServiceImpl {
+public class WishlistServiceImpl implements WishlistService {
 	SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	WishlistMapper mapper = sqlSession.getMapper(WishlistMapper.class);
 
-	
-	boolean addWishlist(WishlistVO wishlist) {
-		return mapper.addWishlist(wishlist);
+	@Override
+	public boolean addWishlist(WishlistVO wvo) {
+		return mapper.addWishlist(wvo) == 1;
 	}
 }
+
+
+//public class WishlistServiceImpl implements WishlistService {
+//	SqlSession sqlSession = DataSource.getInstance().openSession(true);
+//	WishlistMapper mapper = sqlSession.getMapper(WishlistMapper.class);
+//
+//	@Override
+//	public boolean addWishlist(int prodNo) {
+//		return mapper.addWishlist(prodNo) == 1;
+//	}
+//}
