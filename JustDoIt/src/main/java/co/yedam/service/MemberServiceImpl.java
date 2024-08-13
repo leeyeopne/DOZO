@@ -1,10 +1,9 @@
 package co.yedam.service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 import co.yedam.common.DataSource;
 import co.yedam.mapper.MemberMapper;
@@ -32,4 +31,5 @@ public class MemberServiceImpl implements MemberService {
 	public boolean selectId(String registerId) {
 		return mapper.selectId(registerId) == 0;
 	}
+
 }

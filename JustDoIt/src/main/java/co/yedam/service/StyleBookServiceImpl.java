@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import co.yedam.vo.StyleBookVO;
+
 import co.yedam.common.DataSource;
 import co.yedam.common.SearchDTO;
 import co.yedam.mapper.StyleBookMapper;
-import co.yedam.vo.StyleBookVO;
 
 public class StyleBookServiceImpl implements StyleBookService {
 	
