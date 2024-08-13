@@ -28,13 +28,13 @@ document.querySelector('.wishlist-btn').addEventListener('click',function(){
 	// 그 값을 가져온다(.value).
 	let prodNo = document.querySelector('input[name=prodNo]').value;
 	//let wishNo = document.querySelector('input[name=wishNo]').value;
-	let wishDate = document.querySelector('input[name=wishDate]').value;
+	//let wishDate = document.querySelector('input[name=wishDate]').value;
 	//let memberNo = document.querySelector('input[name=memberNo]').value;
 	// console.log(prodNo);
 	svc.addWish({
-		prodNo: prodNo,
+		prodNo
 		//wishNo: wishNo,
-		wishDate: wishDate,
+		//wishDate: wishDate,
 		//memberNo: memberNo
 		
 		}, function() {
