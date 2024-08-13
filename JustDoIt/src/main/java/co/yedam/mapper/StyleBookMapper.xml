@@ -56,9 +56,9 @@
 					FROM style_tbl
 					<include refid="selectCondition"></include>
 					ORDER BY board_no) a ) b
-		WHERE b.rn > (#{page} - 1) * 5
+		WHERE b.rn > (#{page} - 1) * 6
 			<![CDATA[
-			and b.rn <= (#{page} * 5)
+			and b.rn <= (#{page} * 6)
 			]]>
 	</select>
 

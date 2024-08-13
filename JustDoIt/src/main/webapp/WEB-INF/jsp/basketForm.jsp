@@ -60,7 +60,7 @@
 											<input type="text" value="${basket.basketQuantity}">
 										</div>
 									</td>
-									<td class="cart__total">${basket.basketQuantity * }</td>
+									<td class="cart__total"></td>
 									<td class="cart__close">
 										<input type="hidden" name="cartNo" value="${basket.cartNo}" /> 
 										<input type="hidden" name="prodNo" value="${basket.prodNo}" /> 

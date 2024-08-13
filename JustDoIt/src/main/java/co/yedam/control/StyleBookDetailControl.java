@@ -11,7 +11,7 @@ import co.yedam.service.StyleBookService;
 import co.yedam.service.StyleBookServiceImpl;
 import co.yedam.vo.StyleBookVO;
 
-public class StyleBookControl implements Control {
+public class StyleBookDetailControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) {
@@ -26,7 +26,7 @@ public class StyleBookControl implements Control {
 			req.setAttribute("board", board);
 			req.setAttribute("page", page);
 			
-			req.getRequestDispatcher("styleBook/styleBookForm.tiles").forward(req, resp);
+			req.getRequestDispatcher("styleBook/styleBookDetail.tiles").forward(req, resp);
 		} catch (ServletException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
