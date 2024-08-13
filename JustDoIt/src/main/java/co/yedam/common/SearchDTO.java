@@ -7,5 +7,7 @@ public class SearchDTO {
 	private int page;
 	private String searchCondition;
 	private String keyword;
-	private int bno;
+	private String prodCategory;
+	private String prodCategory2;
+	private int prodStar;
 }

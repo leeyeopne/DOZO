@@ -1,10 +1,11 @@
 package co.yedam.vo;
 
+import co.yedam.common.SearchDTO;
 import lombok.Data;
 
 
 @Data
-public class ProductVO {
+public class ProductVO extends SearchDTO{
 	private int prodNo;
 	private String prodName;
 	private int prodPrice;

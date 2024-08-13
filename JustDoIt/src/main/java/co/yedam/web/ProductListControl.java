@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.annotations.Param;
+
 import co.yedam.common.Control;
 import co.yedam.common.PageDTO;
 import co.yedam.common.SearchDTO;
@@ -22,27 +24,35 @@ public class ProductListControl implements Control {
 		String prodCategory2 = req.getParameter("prodCategory2"); 
 		String prodStar = req.getParameter("prodStar"); 
 		
+		ProductService svc = new ProductServiceImpl();
+		
 		String page = req.getParameter("page");
 		page = page == null ? "1" : page;
-		
+		prodStar = prodStar == null ? "0" : prodStar;
+		prodCategory = prodCategory == null || prodCategory == "" ? null : prodCategory;
+		prodCategory2 = prodCategory2 == null || prodCategory2 == ""  ? null : prodCategory2;
+
 		SearchDTO search = new SearchDTO();
+		search.setProdStar(Integer.parseInt(prodStar));
+		search.setProdCategory(prodCategory);
+		search.setProdCategory2(prodCategory2);
 		search.setPage(Integer.parseInt(page));
+		
+		System.out.println(search);
+		
+		
+		int totalCnt = svc.totalCount(search);
+		
+		PageDTO pageDTO = new PageDTO(Integer.parseInt(page),totalCnt );
 		//prodCategory = prodCategory == null ? "top" : prodCategory;
 		//prodCategory2 = prodCategory2 == null ? "women" : prodCategory2;
-		prodStar = prodStar == null ? "0" : prodStar;
 		
-		ProductService svc = new ProductServiceImpl();
-		List<ProductVO> list = svc.productList(prodCategory, prodCategory2, Integer.parseInt(prodStar));
+		//List<ProductVO> list = svc.productList(prodCategory, prodCategory2, Integer.parseInt(prodStar));
+		List<ProductVO> list = svc.productListPaging(search);
+		System.out.println(list);
 		
-		
-		
-		
+		req.setAttribute("page", pageDTO);
 		req.setAttribute("productList", list);
-		
-		// paging
-		int totalCnt = svc.totalCount();
-		PageDTO pageDTO = new PageDTO(Integer.parseInt(page), totalCnt);
-		req.setAttribute("paging", pageDTO);
 		
 		req.getRequestDispatcher("product/productList.tiles").forward(req, resp); // 페이지 재지정
 	}

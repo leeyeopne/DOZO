@@ -9,6 +9,8 @@ public interface ProductService {
 	
 	List<ProductVO> productList(String prodCategory, String prodCategory2, int prodStar);
 	
-	int totalCount(); // 페이징 계산용
+	List<ProductVO> productListPaging(SearchDTO search);
+	
+	int totalCount(SearchDTO search); // 페이징 계산용
 	ProductVO getProduct(int prodNo);
 }

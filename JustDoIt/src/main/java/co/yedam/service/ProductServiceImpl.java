@@ -26,9 +26,17 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public int totalCount() {
-		return mapper.selectTotalCount();
+	public int totalCount(SearchDTO search) {
+		return mapper.selectTotalCount(search);
 	}
+
+
+	@Override
+	public List<ProductVO> productListPaging(SearchDTO search) {
+		return mapper.selectListPaging(search);
+	}
+
+
 
 
 	
