@@ -18,9 +18,9 @@ public class BasketControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 요청 파라미터 읽기
-		String basketColor = req.getParameter("basketColor");
-		String basketSize = req.getParameter("basketSize");
-		String basketQuantity = req.getParameter("basketQuantity");
+		String productColor = req.getParameter("productColor");
+		String productSize = req.getParameter("productSize");
+		String productQuantity = req.getParameter("productQuantity");
 		String prodNo = req.getParameter("prodNo");
 		
         HttpSession session = req.getSession();
@@ -28,9 +28,9 @@ public class BasketControl implements Control {
 		
 		// 데이터 변환
 		BasketVO bvo = new BasketVO();
-		bvo.setBasketColor(basketColor);
-		bvo.setBasketSize(basketSize);
-		bvo.setBasketQuantity(Integer.parseInt(basketQuantity));
+		bvo.setProductColor(productColor);
+		bvo.setProductSize(productSize);
+		bvo.setProductQuantity(Integer.parseInt(productQuantity));
 		bvo.setProdNo(Integer.parseInt(prodNo));
 		bvo.setMemberNo(memberNo);
 

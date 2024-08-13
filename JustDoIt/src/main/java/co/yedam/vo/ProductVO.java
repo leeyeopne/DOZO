@@ -7,7 +7,7 @@ import lombok.Data;
 public class ProductVO {
 	private int prodNo;
 	private String prodName;
-	private String prodPrice;
+	private int prodPrice;
 	private String prodCategory;
 	private String prodImage1;
 	private String prodImage2;

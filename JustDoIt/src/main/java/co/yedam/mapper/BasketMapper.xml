@@ -4,9 +4,8 @@
 
 	<!-- SQL 쿼리: BasketMapper.xml에서 insertBasket 쿼리를 정의하고 장바구니에 상품을 추가합니다. -->
 	<insert id="insertBasket">
-		insert into basket (cart_no, prod_no, member_no, basket_date, basket_color, basket_size, basket_quantity)
-		values(basket_seq.nextval, #{prodNo}, #{memberNo}, SYSDATE, #{basketColor}, #{basketSize},
-		#{basketQuantity})
+		insert into basket (cart_no, prod_no, member_no, basket_date, product_color, product_size, product_quantity)
+		values(basket_seq.nextval, #{prodNo}, #{memberNo}, SYSDATE, #{productColor}, #{productSize}, #{productQuantity})
 	</insert>
 	
 	<!-- 
@@ -30,9 +29,9 @@
     <id property="cartNo" column="cart_no"/>
     <result property="prodNo" column="prod_no"/>
     <result property="memberNo" column="member_no"/>
-    <result property="basketColor" column="basket_color"/>
-    <result property="basketSize" column="basket_size"/>
-    <result property="basketQuantity" column="basket_quantity"/>
+    <result property="productColor" column="product_color"/>
+    <result property="productSize" column="product_size"/>
+    <result property="productQuantity" column="product_quantity"/>
     <result property="basketDate" column="basket_date"/>
 
     <association property="product" javaType="co.yedam.vo.ProductVO">
@@ -58,9 +57,9 @@
 		p.prod_category2, 
 		p.prod_star, 
 		b.basket_date, 
-		b.basket_color, 
-		b.basket_size, 
-		b.basket_quantity
+		b.product_color, 
+		b.product_size, 
+		b.product_quantity
 		FROM BASKET b
 		JOIN PRODUCT p 
 		ON b.prod_no = p.prod_no
