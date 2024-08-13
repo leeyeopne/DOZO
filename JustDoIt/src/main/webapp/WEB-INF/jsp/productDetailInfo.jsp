@@ -53,7 +53,7 @@
 			<div class="col-lg-6">
 				<div class="product__details__text">
 					<h3>${product.prodName }
-						<span>${product.prodCategory2 }</span>
+						<span style="font-size: 20px">${product.prodCategory2 }</span>
 					</h3>
 					<div class="rating">
 						<c:forEach begin="1" end="${product.prodStar }">
@@ -61,11 +61,11 @@
 							<i class="fa fa-star"></i>
 
 						</c:forEach>
-						<span>( 138 reviews )</span>
+
 					</div>
 
-					<div class="product__details__price">${product.prodPrice }</div>
-					<p>${product.prodExp }</p>
+					<div class="product__details__price"  style="font-size: 25px">${product.prodPrice }원</div>
+					<p style="font-size: 15px">${product.prodExp }</p>
 
 					<form action="addBasket.do" id="basketForm">
 						<input type="hidden" name="prodNo" value="${product.prodNo}" />
@@ -73,12 +73,16 @@
 							<ul>
 								<li><span>색상:</span>
 									<div class="color__checkbox">
-										<label for="red"> <input type="radio"
-											name="basketColor" id="red" value="red" checked> <span
-											class="checkmark"></span></label> <label for="black"> <input
-											type="radio" name="basketColor" id="black" value="black">
-											<span class="checkmark black-bg"></span></label> <label for="grey">
-											<input type="radio" name="basketColor" id="grey" value="grey">
+										<label for="red"> 
+										<input type="radio" name="productColor" id="red" value="red" checked> 
+											<span class="checkmark"></span>
+										</label>
+										<label for="black"> 
+											 <input type="radio" name="productColor" id="black" value="black">
+											<span class="checkmark black-bg"></span>
+										</label> 
+											<label for="grey">
+											<input type="radio" name="productColor" id="grey" value="grey"> 
 											<span class="checkmark grey-bg"></span>
 										</label>
 									</div></li>
@@ -87,11 +91,11 @@
 										<label for="xs-btn" class="active"> <input
 											type="radio" id="xs-btn"> xs
 										</label> <label for="s-btn"> <input type="radio" id="s-btn"
-											name="basketSize" value="s"> s
+											name="productSize" value="s"> s
 										</label> <label for="m-btn"> <input type="radio" id="m-btn"
-											name="basketSize" value="m"> m
+											name="productSize" value="m"> m
 										</label> <label for="l-btn"> <input type="radio" id="l-btn"
-											name="basketSize" value="l"> l
+											name="productSize" value="l"> l
 										</label>
 									</div></li>
 							</ul>
@@ -102,30 +106,27 @@
 							<div class="quantity">
 								<span>수량:</span>
 								<div class="pro-qty">
-									<input type="number" name="basketQuantity" value="1">
+									<input type="number" name="productQuantity" value="1">
 								</div>
 							</div>
-							
-							<div class="product__details__button">
-								<button type="submit" class="cart-btn">
-									<span class="icon_bag_alt"></span> Add to cart
-								</button>
-							</div>
+
+							<button type="submit" class="cart-btn">
+								<span class="icon_bag_alt"></span> Add to cart
+							</button>
 
 
+							<ul>
+								<li>
+									<button type="button" class="wishlist-btn">
+										<span class="icon_heart_alt"> </span>
+									</button>
+
+								</li>
+							</ul>
 						</div>
 					</form>
 
-					<div class="product__details__button">
-						<ul>
-							<li>
-								<button type="button" class="wishlist-btn">
-									<span class="icon_heart_alt"> </span>
-								</button>
-
-							</li>
-						</ul>
-					</div>
+					<div class="product__details__button"></div>
 
 
 				</div>
@@ -168,9 +169,9 @@
 					<h5>RELATED PRODUCTS</h5>
 				</div>
 			</div>
-					<c:forEach var="product" items="${productList }">
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				<div class="product__item">
+			<c:forEach var="product" items="${productList }">
+				<div class="col-lg-3 col-md-4 col-sm-6">
+					<div class="product__item">
 
 						<div class="product__item__pic set-bg"
 							data-setbg="img/product/related/rp-1.jpg">
@@ -188,22 +189,22 @@
 							</h6>
 							<div class="rating">
 
-												<c:forEach var="i" begin="1" end="${product.prodStar}">
-													<i class="fa fa-star"></i>
-												</c:forEach>
-												<c:forEach var="i" begin="${product.prodStar + 1}" end="5">
-													<i class="fa fa-star-o"></i>
-												</c:forEach>
+								<c:forEach var="i" begin="1" end="${product.prodStar}">
+									<i class="fa fa-star"></i>
+								</c:forEach>
+								<c:forEach var="i" begin="${product.prodStar + 1}" end="5">
+									<i class="fa fa-star-o"></i>
+								</c:forEach>
 
 
 							</div>
 							<div class="product__price">${product.prodPrice }</div>
 						</div>
+					</div>
 				</div>
-			</div>
-					</c:forEach>
-					
-					
+			</c:forEach>
+
+
 		</div>
 	</div>
 </section>

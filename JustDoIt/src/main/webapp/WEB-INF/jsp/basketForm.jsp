@@ -39,10 +39,10 @@
 							<c:forEach var="basket" items="${basketList}">
 
 								<tr>
-									<td class="cart__product__item"><img
-										src="${basket.product.thumbnail }" alt="">
+									<td class="cart__product__item">
+									<img style="width:150px" src="${basket.product.thumbnail }" alt="">
 										<div class="cart__product__item__title">
-											<h6>${basket.product.prodName }</h6>
+											<h6 style="font-size: 20px">${basket.product.prodName }</h6>
 											<div class="rating">
 												<c:forEach var="i" begin="1"
 													end="${basket.product.prodStar}">
@@ -54,18 +54,17 @@
 												</c:forEach>
 											</div>
 										</div></td>
-									<td class="cart__price">${basket.product.prodPrice }</td>
+									<td class="cart__price">${basket.product.prodPrice }원</td>
 									<td class="cart__quantity">
 										<div class="pro-qty">
-											<input type="text" value="${basket.basketQuantity}">
+											<input type="text" value="${basket.productQuantity}">
 										</div>
 									</td>
-									<td class="cart__total"></td>
+									<td class="cart__total">${basket.productQuantity * basket.product.prodPrice}원</td>
 									<td class="cart__close">
-										<input type="hidden" name="cartNo" value="${basket.cartNo}" /> 
-										<input type="hidden" name="prodNo" value="${basket.prodNo}" /> 
-										<span class="icon_close"></span>
-									</td>
+									<input type="hidden" name="cartNo" value="${basket.cartNo}" /> 
+									<input type="hidden" name="prodNo" value="${basket.prodNo}" /> 
+										<span class="icon_close"></span></td>
 								</tr>
 							</c:forEach>
 
