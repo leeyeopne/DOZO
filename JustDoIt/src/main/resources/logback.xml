@@ -11,6 +11,9 @@
   <logger name="com.yedam.mapper.ProductMapper">
     <level value="debug"/>
   </logger>
+  <logger name="co.yedam.mapper.ProductMapper">
+    <level value="debug"/>
+  </logger>
 
   <root level="error">
     <appender-ref ref="stdout"/>
