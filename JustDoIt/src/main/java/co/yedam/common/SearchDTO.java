@@ -6,6 +6,7 @@ import lombok.Data;
 public class SearchDTO {
 	private int page;
 	private int pno;
+	private int bno;
 	private String searchCondition;
 	private String keyword;
 	private String prodCategory;

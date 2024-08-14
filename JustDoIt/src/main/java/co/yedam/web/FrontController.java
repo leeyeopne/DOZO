@@ -10,23 +10,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.yedam.control.ImageDownload;
-import co.yedam.control.PagingCount;
-import co.yedam.control.RemoveReplyControl;
-
 import co.yedam.common.Control;
 import co.yedam.control.AddReplyControl;
+import co.yedam.control.AddStyleBookControl;
 import co.yedam.control.BasketControl;
 import co.yedam.control.BasketFormControl;
 import co.yedam.control.DeleteBasketControl;
 import co.yedam.control.IdCheckControl;
+import co.yedam.control.ImageDownload;
 import co.yedam.control.LoginFormControl;
+
 import co.yedam.control.OrderFormControl;
+
+import co.yedam.control.PagingCount;
+
 import co.yedam.control.ProductDetailControl;
 import co.yedam.control.RegisterControl;
 import co.yedam.control.RegisterFormControl;
+import co.yedam.control.RemoveReplyControl;
 import co.yedam.control.ReplyListControl;
 import co.yedam.control.StyleBookDetailControl;
+import co.yedam.control.StyleBookForm;
 import co.yedam.control.StyleBookListControl;
 import co.yedam.control.WishlistControl;
 import co.yedam.control.loginControl;
@@ -74,7 +78,9 @@ public class FrontController extends HttpServlet {
 		map.put("/styleBookList.do", new StyleBookListControl());
 		// 스타일북 게시판 상세
 		map.put("/styleBookDetail.do", new StyleBookDetailControl());
-
+		// 스타일북 등록
+		map.put("/addStyleBook.do", new AddStyleBookControl());
+		map.put("/styleBookForm.do", new StyleBookForm());
 		
 		// 목록.
 		map.put("/replyList.do", new ReplyListControl());

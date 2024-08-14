@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -19,6 +20,11 @@ public class AddStyleBookControl implements Control {
 	@Override
     public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		//key=value 처리위한 application/x-www-form-urlencode 방식.
+        HttpSession session = req.getSession();
+        String logid = (String) session.getAttribute("logid"); // 세션에서 'logid'로 저장된 로그인 아이디를 가져옴
+        Integer memberNo = (Integer) session.getAttribute("memberNo"); // 세션에서 'memberNo'로 저장된 멤버 번호 가져옴
+        
+        
         String writer = req.getParameter("writer");
         String content = req.getParameter("content");
         String title = req.getParameter("title");
