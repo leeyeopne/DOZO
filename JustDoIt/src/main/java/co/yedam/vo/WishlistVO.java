@@ -5,7 +5,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class WishlistVO {
+public class WishlistVO extends ProductVO {
 	private int wishNo;
 	private int prodNo;
 	private int memberNo;
