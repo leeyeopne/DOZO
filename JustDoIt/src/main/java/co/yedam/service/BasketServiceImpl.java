@@ -11,7 +11,7 @@ import co.yedam.vo.BasketVO;
 
 public class BasketServiceImpl implements BasketService {
 	SqlSession sqlSession = DataSource.getInstance().openSession(true);
-	BasketMapper mapper = sqlSession.getMapper(OrderMapper.class);
+	BasketMapper mapper = sqlSession.getMapper(BasketMapper.class);
 
 	
 	

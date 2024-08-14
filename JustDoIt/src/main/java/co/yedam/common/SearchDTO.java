@@ -11,4 +11,5 @@ public class SearchDTO {
 	private String prodCategory;
 	private String prodCategory2;
 	private int prodStar;
+	private int bno;
 }
