@@ -59,10 +59,11 @@
 
 							<ul class="header__right__widget">
 								<li><span class="icon_search search-switch"></span></li>
-								<li><a href="#"><span class="icon_heart_alt"></span>
-										<div class="tip">2</div> </a></li>
+								<li><a href="wishList.do?loginId=${sessionScope.loginId}"><span class="icon_heart_alt"></span>
+							      	<!-- wishList 갯수 구현 -->
+									<div class="tip">2</div> </a></li>
 								<li><a href="#"><span class="icon_bag_alt"></span>
-										<div class="tip">2</div> </a></li>
+										<div class="tip"></div> </a></li>
 							</ul>
 						</c:otherwise>
 					</c:choose>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.mapper.PageWishlistMapper">
+	<!-- <select id="selectList" resultType="co.yedam.vo.ProductVO" parameterType="co.yedam.vo.ProductVO"> -->
+	<select id="selectList" resultType="co.yedam.vo.WishlistVO">
+		select p.prod_name prod_name,
+			   p.thumbnail thumbnail,
+			   p.prod_star prod_star,
+		       p.prod_price prod_price,
+		       w.wish_no wish_no
+		from product p
+		join wishlist w
+		on p.prod_no = w.prod_no
+		join member m
+		on m.member_no = w.member_no
+		where m.member_id = #{loginId}
+	</select>
+</mapper>
