@@ -6,11 +6,12 @@ import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSource;
 import co.yedam.mapper.BasketMapper;
+import co.yedam.mapper.OrderMapper;
 import co.yedam.vo.BasketVO;
 
 public class BasketServiceImpl implements BasketService {
 	SqlSession sqlSession = DataSource.getInstance().openSession(true);
-	BasketMapper mapper = sqlSession.getMapper(BasketMapper.class);
+	BasketMapper mapper = sqlSession.getMapper(OrderMapper.class);
 
 	
 	
@@ -34,5 +35,8 @@ public class BasketServiceImpl implements BasketService {
 		// TODO Auto-generated method stub
 		return mapper.deleteBasket(cartNo)==1;
 	}
+
+
+
 
 }

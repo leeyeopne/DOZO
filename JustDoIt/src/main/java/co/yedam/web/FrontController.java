@@ -19,7 +19,11 @@ import co.yedam.control.DeleteBasketControl;
 import co.yedam.control.IdCheckControl;
 import co.yedam.control.ImageDownload;
 import co.yedam.control.LoginFormControl;
+
+import co.yedam.control.OrderFormControl;
+
 import co.yedam.control.PagingCount;
+
 import co.yedam.control.ProductDetailControl;
 import co.yedam.control.RegisterControl;
 import co.yedam.control.RegisterFormControl;
@@ -105,6 +109,11 @@ public class FrontController extends HttpServlet {
 
 		// 위시리스트 데이터 추가
 		map.put("/addWishlist.do", new WishlistControl());
+	
+		// 주문 페이지
+		map.put("/orderForm.do", new OrderFormControl());
+
+	
 	}
 
 	@Override
