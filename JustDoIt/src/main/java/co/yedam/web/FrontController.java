@@ -107,9 +107,9 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductListControl());
 
 		// 장바구니 데이터 추가
-		map.put("/addBasket.do", new BasketControl());
+		map.put("/addBasket.do", new BasketControl()); // 기능
 		// 장바구니 페이지
-		map.put("/basketForm.do", new BasketFormControl());
+		map.put("/basketForm.do", new BasketFormControl()); //화면
 
 		// 장바구니 삭제
 		map.put("/removeBasket.do", new DeleteBasketControl());

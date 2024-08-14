@@ -1,13 +1,18 @@
 package co.yedam.common;
 
-import org.apache.ibatis.session.SqlSession;
 
+<<<<<<< HEAD
+=======
 
 import co.yedam.mapper.ProductMapper;
 import co.yedam.vo.ProductVO;
+>>>>>>> refs/heads/master
 import co.yedam.mapper.WishlistMapper;
 import co.yedam.vo.WishlistVO;
+<<<<<<< HEAD
+=======
 
+>>>>>>> refs/heads/master
 
 public class AppTest {
 
@@ -19,6 +24,10 @@ public class AppTest {
 		mapper.selectList().forEach(product -> {
 			System.out.println(product);
 		});
+<<<<<<< HEAD
+		 */
+
+=======
 		 * 
 <<<<<<< HEAD
 		 */ 
@@ -40,7 +49,10 @@ public class AppTest {
 		 * System.out.println(product); });
 		 */
 
+>>>>>>> refs/heads/master
 
 	}
 
 }
+		
+		

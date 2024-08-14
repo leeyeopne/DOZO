@@ -64,67 +64,63 @@
 
 					</div>
 
-					<div class="product__details__price"  style="font-size: 25px">${product.prodPrice }원</div>
+					<div class="product__details__price" style="font-size: 25px">${product.prodPrice }원</div>
 					<p style="font-size: 15px">${product.prodExp }</p>
 
-					<form action="addBasket.do" id="basketForm">
-						<input type="hidden" name="prodNo" value="${product.prodNo}" />
-						<div class="product__details__widget">
-							<ul>
-								<li><span>색상:</span>
-									<div class="color__checkbox">
-										<label for="red"> 
-										<input type="radio" name="productColor" id="red" value="red" checked> 
-											<span class="checkmark"></span>
-										</label>
-										<label for="black"> 
-											 <input type="radio" name="productColor" id="black" value="black">
-											<span class="checkmark black-bg"></span>
-										</label> 
-											<label for="grey">
-											<input type="radio" name="productColor" id="grey" value="grey"> 
-											<span class="checkmark grey-bg"></span>
-										</label>
-									</div></li>
-								<li><span>사이즈:</span>
-									<div class="size__btn">
-										<label for="xs-btn" class="active"> <input
-											type="radio" id="xs-btn"> xs
-										</label> <label for="s-btn"> <input type="radio" id="s-btn"
-											name="productSize" value="s"> s
-										</label> <label for="m-btn"> <input type="radio" id="m-btn"
-											name="productSize" value="m"> m
-										</label> <label for="l-btn"> <input type="radio" id="l-btn"
-											name="productSize" value="l"> l
-										</label>
-									</div></li>
-							</ul>
-						</div>
+					<input type="hidden" name="prodNo" value="${product.prodNo}" />
+					<div class="product__details__widget">
+						<ul>
+							<li><span>색상:</span>
+								<div class="color__checkbox">
+									<label for="red"> <input type="radio"
+										name="productColor" id="red" value="red" checked> <span
+										class="checkmark"></span>
+									</label> <label for="black"> <input type="radio"
+										name="productColor" id="black" value="black"> <span
+										class="checkmark black-bg"></span>
+									</label> <label for="grey"> <input type="radio"
+										name="productColor" id="grey" value="grey"> <span
+										class="checkmark grey-bg"></span>
+									</label>
+								</div></li>
+							<li><span>사이즈:</span>
+								<div class="size__btn">
+									<label for="xs-btn" class="active"> <input type="radio"
+										id="xs-btn" name="productSize" value="xs"> xs
+									</label> <label for="s-btn"> <input type="radio" id="s-btn"
+										name="productSize" value="s"> s
+									</label> <label for="m-btn"> <input type="radio" id="m-btn"
+										name="productSize" value="m"> m
+									</label> <label for="l-btn"> <input type="radio" id="l-btn"
+										name="productSize" value="l"> l
+									</label>
+								</div></li>
+						</ul>
+					</div>
 
 
-						<div class="product__details__button">
-							<div class="quantity">
-								<span>수량:</span>
-								<div class="pro-qty">
-									<input type="number" name="productQuantity" value="1">
-								</div>
+					<div class="product__details__button">
+						<div class="quantity">
+							<span>수량:</span>
+							<div class="pro-qty">
+								<input type="number" name="productQuantity" value="1">
 							</div>
-
-							<button type="submit" class="cart-btn">
-								<span class="icon_bag_alt"></span> Add to cart
-							</button>
-
-
-							<ul>
-								<li>
-									<button type="button" class="wishlist-btn">
-										<span class="icon_heart_alt"> </span>
-									</button>
-
-								</li>
-							</ul>
 						</div>
-					</form>
+
+						<button type="button" class="cart-btn">
+							<span class="icon_bag_alt"></span> Add to cart
+						</button>
+
+
+						<ul>
+							<li>
+								<button type="button" class="wishlist-btn">
+									<span class="icon_heart_alt"> </span>
+								</button>
+
+							</li>
+						</ul>
+					</div>
 
 					<div class="product__details__button"></div>
 
