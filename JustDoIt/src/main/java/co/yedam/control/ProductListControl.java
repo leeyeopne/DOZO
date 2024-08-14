@@ -1,4 +1,4 @@
-package co.yedam.web;
+package co.yedam.control;
 
 import java.io.IOException;
 import java.util.List;
@@ -60,6 +60,7 @@ public class ProductListControl implements Control {
 		req.setAttribute("productList", list);
 		
 		req.getRequestDispatcher("product/productList.tiles").forward(req, resp); // 페이지 재지정
+		//req.getRequestDispatcher("product/pageWishList.tiles").forward(req, resp); // 페이지 재지정
 	}
 
 }
