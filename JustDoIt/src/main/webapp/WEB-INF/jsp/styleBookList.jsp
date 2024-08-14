@@ -16,8 +16,7 @@
 							data-setbg="img/blog/blog-1.jpg"></div>
 						<div class="blog__item__text">
 							<h6>
-								<a
-									href="styleBookDetail.do?page=${paging.page }&bno=${board.boardNo}">${board.title}</a>
+								<a href="styleBookDetail.do?page=${paging.page }&bno=${board.boardNo}">${board.title}</a>
 							</h6>
 							<ul>
 								<li>by <span>${board.writer}</span></li>
@@ -47,13 +46,10 @@
 		<c:forEach var="p" begin="${paging.startPage}" end="${paging.endPage}">
 			<c:choose>
 				<c:when test="${paging.page == p}">
-					<a
-						href="styleBookList.do?searchCondition=${searchCondition}&keyword=${keyword}&page=${p}"
-						class="active">${p}</a>
+					<a href="styleBookList.do?searchCondition=${searchCondition}&keyword=${keyword}&page=${p}" class="active" style="color: white; background-color: #0d0d0d;">${p}</a>
 				</c:when>
 				<c:otherwise>
-					<a
-						href="styleBookList.do?searchCondition=${searchCondition}&keyword=${keyword}&page=${p}">${p}</a>
+					<a href="styleBookList.do?searchCondition=${searchCondition}&keyword=${keyword}&page=${p}">${p}</a>
 				</c:otherwise>
 			</c:choose>
 		</c:forEach>
