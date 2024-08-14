@@ -205,6 +205,8 @@ Created: Colorib
     /*-------------------
 		Quantity change
 	--------------------- */
+	/*
+	
     var proQty = $('.pro-qty');
 	proQty.prepend('<span class="dec qtybtn">-</span>');
 	proQty.append('<span class="inc qtybtn">+</span>');
@@ -223,6 +225,7 @@ Created: Colorib
 		}
 		$button.parent().find('input').val(newVal);
     });
+    */
     
     /*-------------------
 		Radio Btn
