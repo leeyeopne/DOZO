@@ -10,7 +10,7 @@
 				<div class="col-lg-8">
 					<h5>Login</h5>
 					<div class="col">
-<div class="승엽">
+
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="checkout__form__input">
 								<p>
