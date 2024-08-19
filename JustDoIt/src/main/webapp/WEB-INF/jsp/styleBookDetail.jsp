@@ -1,6 +1,5 @@
-<%@page import="co.yedam.vo.StyleBookVO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page import="co.yedam.vo.StyleBookVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <style>
@@ -11,6 +10,42 @@ div.reply ul {
 div.reply span {
 	display: inline-block;
 }
+
+.blog__details__item__title {
+    background: #ffffff;
+    padding-top: 30px;
+    padding-right: 30px;
+    margin-top: -100px;
+    position: relative;
+    margin-right: 0px;
+}
+
+.blog__details__item > img {
+	width: 350px;
+}
+
+#modify, #delete {
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.1s;
+  margin-right: 5px;
+}
+
+#modify:hover {
+	background-color: black;
+	color: white;
+}
+
+#delete:hover {
+	background-color: black;
+	color: white;
+}
+
 </style>
 
 <!-- Breadcrumb Begin -->
@@ -19,9 +54,8 @@ div.reply span {
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="breadcrumb__links">
-					<a href="./index.html"><i class="fa fa-home"></i> Home</a> <a
-						href="./blog.html">Blog</a> <span>Being seen: how is age
-						diversity effecting change in fashion and beauty?</span>
+					<a href="./"><i class="fa fa-home"></i> Home</a> <a
+						href="styleBookList.do">STYLE BOOK</a> <span>${board.title}</span>
 				</div>
 			</div>
 		</div>
@@ -36,9 +70,9 @@ div.reply span {
 			<div class="col-lg-8 col-md-8">
 				<div class="blog__details__content">
 					<div class="blog__details__item">
-						<img src="img/blog/details/blog-details.jpg" alt="">
+						<img src=img/${board.image} alt="">
 						<div class="blog__details__item__title">
-							<span class="tip">Street style</span>
+							<span class="tip" style="border-radius: 0px;">Street style</span>
 							<h4>${board.title }</h4>
 							<ul>
 								<li>by <span>${board.writer}</span></li>
@@ -47,70 +81,21 @@ div.reply span {
 							</ul>
 						</div>
 					</div>
+					
 					<div class="blog__details__desc">
-						<p>${board.content }</p>
+						<p style="font-size: 18px;">${board.content }</p>
 					</div>
-
-
-					<div class="blog__details__comment">
-						<h5>3 Comment</h5>
-						<a href="#" class="leave-btn">Leave a comment</a>
-						<div class="blog__comment__item">
-							<div class="blog__comment__item__text">
-								<h6>Brandon Kelley</h6>
-								<p>Duis voluptatum. Id vis consequat consetetur dissentiet,
-									ceteros commune perpetua mei et. Simul viderer facilisis egimus
-									tractatos splendi.</p>
-								<ul>
-									<li><i class="fa fa-clock-o"></i> Seb 17, 2019</li>
-									<li><i class="fa fa-heart-o"></i> 12</li>
-									<li><i class="fa fa-share"></i> 1</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+					
+					<c:if test="${sessionScope.loginId == board.writer}">
+						<a href="updateStyleBookForm.do?bno=${board.boardNo}" id="modify">수정</a>
+						<a href="deleteStyleBook.do?bno=${board.boardNo}&page=${paging.page}" id="delete">삭제</a>
+					</c:if>
+				
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<!-- 댓글관련 -->
-<div class="container reply">
-	<!-- 등록 -->
-	<div class="header">
-		<input class="col-sm-8" id="content">
-		<button class="col-sm-3" id="addReply">댓글등록</button>
-	</div>
-	<!-- 목록 -->
-	<div class="content">
-		<ul id="replyList">
-			<li style="display: none; margin-top: 10px"><span
-				class="col-sm-2">12</span> <span class="col-sm-4">댓글내용</span> <span
-				class="col-sm-2">user02</span> <span class="col-sm-2"><button>삭제</button></span>
-			</li>
-		</ul>
-	</div>
-
-	<!-- 댓글 페이징 -->
-	<div class="footer">
-		<nav aria-label="...">
-			<ul class="pagination">
-			</ul>
-		</nav>
-	</div>
-
-</div>
-
-<script>
-	const bno = "${board.boardNo }"
-	const replyer = "${sessionScope.loginId}"
-
-	document.querySelector('form>table button.btn.btn-warning')
-			.addEventListener('click', function(e) {
-				location.href = 'modifyBoard.do?bno=${board.boardNo}';
-			})
-</script>
 
 <script src="js/boardService.js"></script>
 <script src="js/board.js"></script>

@@ -40,15 +40,15 @@
 
 								<tr>
 									<td class="cart__product__item"><img style="width: 150px"
-										src="${basket.product.thumbnail }" alt="">
+										src="${basket.thumbnail }" alt="">
 										<div class="cart__product__item__title">
-											<h6 style="font-size: 20px">${basket.product.prodName }</h6>
+											<h6 style="font-size: 20px">${basket.prodName }</h6>
 											<div class="rating">
 												<c:forEach var="i" begin="1"
-													end="${basket.product.prodStar}">
+													end="${basket.prodStar}">
 													<i class="fa fa-star"></i>
 												</c:forEach>
-												<c:forEach var="i" begin="${basket.product.prodStar + 1}"
+												<c:forEach var="i" begin="${basket.prodStar + 1}"
 													end="5">
 													<i class="fa fa-star-o"></i>
 												</c:forEach>
@@ -57,7 +57,7 @@
 									<td class="cart__price">
 										
 											<span class="prodPrice">
-											${basket.product.prodPrice }
+											${basket.prodPrice }
 											</span>
 										
 										
@@ -75,8 +75,8 @@
 
 									<td class="cart__total">
 									<input type="hidden" name="productQuantity" value="${basket.productQuantity}" /> 
-									<input type="hidden" name="prodPrice" value="${basket.product.prodPrice}" /> 
-									<span class="total-price">${basket.product.prodPrice * basket.productQuantity}</span>
+									<input type="hidden" name="prodPrice" value="${basket.prodPrice}" /> 
+									<span class="total-price">${basket.prodPrice * basket.productQuantity}</span>
 
 									</td>
 									<td class="cart__close"><input type="hidden" name="cartNo" value="${basket.cartNo}" /> 

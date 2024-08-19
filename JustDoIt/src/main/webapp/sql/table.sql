@@ -16,6 +16,7 @@ CREATE SEQUENCE member_seq; -- 멤버 번호
 CREATE SEQUENCE prod_seq; -- 제품 번호
 CREATE SEQUENCE basket_seq; -- 장바구니 번호
 CREATE SEQUENCE wishlist_seq; -- 위시리스트 번호
+CREATE SEQUENCE board_seq; -- 게시물 번호
 
 
 CREATE TABLE member
@@ -94,3 +95,13 @@ FOREIGN KEY(prod_no) REFERENCES product(prod_no),  -- 제품번호 외래키 참
 FOREIGN KEY(member_no) REFERENCES member(member_no) -- 멤버번호 외래키 참조
 );
 
+
+CREATE TABLE style_tbl (
+    board_no NUMBER,
+    title VARCHAR2(200),
+    writer VARCHAR2(50),
+    content VARCHAR2(1000),
+    image VARCHAR2(1000),
+    writer_date DATE DEFAULT sysdate,
+    view_cnt NUMBER DEFAULT 0
+);

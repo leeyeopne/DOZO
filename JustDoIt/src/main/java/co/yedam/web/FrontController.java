@@ -10,26 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.yedam.control.ImageDownload;
-import co.yedam.control.PagingCount;
-import co.yedam.control.ProductControl;
-import co.yedam.control.RemoveReplyControl;
-
 import co.yedam.common.Control;
 import co.yedam.control.AddReplyControl;
 import co.yedam.control.AddStyleBookControl;
 import co.yedam.control.BasketControl;
 import co.yedam.control.BasketFormControl;
 import co.yedam.control.DeleteBasketControl;
+import co.yedam.control.DeleteStyleBookControl;
 import co.yedam.control.IdCheckControl;
 import co.yedam.control.ImageDownload;
 import co.yedam.control.LoginFormControl;
-import co.yedam.control.PageWishlistControl;
-
 import co.yedam.control.OrderFormControl;
-
+import co.yedam.control.PageWishlistControl;
 import co.yedam.control.PagingCount;
-
+import co.yedam.control.ProductControl;
 import co.yedam.control.ProductDetailControl;
 import co.yedam.control.ProductListControl;
 import co.yedam.control.RegisterControl;
@@ -39,6 +33,8 @@ import co.yedam.control.ReplyListControl;
 import co.yedam.control.StyleBookDetailControl;
 import co.yedam.control.StyleBookForm;
 import co.yedam.control.StyleBookListControl;
+import co.yedam.control.UpdateStyleBookControl;
+import co.yedam.control.UpdateStyleBookFormControl;
 import co.yedam.control.WishlistControl;
 import co.yedam.control.loginControl;
 import co.yedam.control.logoutControl;
@@ -89,6 +85,16 @@ public class FrontController extends HttpServlet {
 		map.put("/addStyleBook.do", new AddStyleBookControl());
 		map.put("/styleBookForm.do", new StyleBookForm());
 		
+		// 스타일북 삭제
+		map.put("/deleteStyleBook.do", new DeleteStyleBookControl());
+		
+		
+		// 스타일북 수정창 이동
+		map.put("/updateStyleBookForm.do", new UpdateStyleBookFormControl());
+		
+		// 스타일북 수정
+		map.put("/updateStyleBook.do", new UpdateStyleBookControl());
+		
 		// 목록.
 		map.put("/replyList.do", new ReplyListControl());
 		// 등록.
@@ -107,9 +113,9 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductListControl());
 
 		// 장바구니 데이터 추가
-		map.put("/addBasket.do", new BasketControl());
+		map.put("/addBasket.do", new BasketControl()); // 기능
 		// 장바구니 페이지
-		map.put("/basketForm.do", new BasketFormControl());
+		map.put("/basketForm.do", new BasketFormControl()); //화면
 
 		// 장바구니 삭제
 		map.put("/removeBasket.do", new DeleteBasketControl());

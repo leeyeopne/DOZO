@@ -17,4 +17,13 @@
 		on m.member_no = w.member_no
 		where m.member_id = #{loginId}
 	</select>
+
+
+	<delete id="deleteWish" parameterType="co.yedam.vo.WishlistVO">
+		delete from wishList
+		where
+		wish_no = #{wishNo}
+
+	</delete>	
+	
 </mapper>

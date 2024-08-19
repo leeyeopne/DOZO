@@ -14,6 +14,9 @@
 		select cart_no ,prod_no ,member_no ,basket_date ,basket_color ,basket_size 
 		,basket_quantity from basket where prod_no = #{prodNo} and member_no = #{memberNo} 
 		</select> -->
+		
+		
+	<!--	
 	<resultMap id="basketResultMap" type="co.yedam.vo.BasketVO">
 		<id property="cartNo" column="cart_no" />
 		<result property="prodNo" column="prod_no" />
@@ -30,29 +33,29 @@
 			<result property="thumbnail" column="thumbnail" />
 			<result property="prodStar" column="prod_star" />
 		</association>
-	</resultMap>
+	</resultMap>-->
 
-	<select id="selectBasket" resultMap="basketResultMap">
+	<select id="selectBasket" parameterType="int" resultType="co.yedam.vo.BasketVO">
 		<!-- select cart_no ,prod_no ,member_no ,basket_date ,basket_color ,basket_size 
 			,basket_quantity from basket order by member_no -->
 
 		SELECT b.cart_no,
-		b.member_no,
-		b.prod_no,
-		p.prod_name,
-		p.prod_price,
-		p.prod_category,
-		p.prod_code,
-		p.thumbnail,
-		p.prod_category2,
-		p.prod_star,
-		b.basket_date,
-		b.product_color,
-		b.product_size,
-		b.product_quantity
+			b.member_no,
+			b.prod_no,
+			p.prod_name,
+			p.prod_price,
+			p.prod_category,
+			p.prod_code,
+			p.thumbnail,
+			p.prod_category2,
+			p.prod_star,
+			b.basket_date,
+			b.product_color,
+			b.product_size,
+			b.product_quantity
 		FROM BASKET b
-		JOIN PRODUCT p
-		ON b.prod_no = p.prod_no
+			JOIN PRODUCT p
+				ON b.prod_no = p.prod_no
 		WHERE b.member_no = #{memberNo}
 	</select>
 
@@ -63,7 +66,14 @@
 
 	</delete>
 
-
+	
+	
+<update id="updateBasket" parameterType="co.yedam.vo.BasketVO">
+    UPDATE basket
+    SET product_quantity = #{productQuantity}
+    WHERE cart_no = #{cartNo}
+    AND prod_no = #{prodNo}
+</update>
 
 
 </mapper>

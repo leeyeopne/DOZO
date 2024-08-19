@@ -10,15 +10,15 @@
 					<table>
 						<thead>
 							<tr>
-								<th>Product</th>
-								<th>Price</th>
+								<th>제품</th>
+								<th>가격</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="wish" items="${Wishlist }">
 								<tr>
-									<td class="cart__product__item"><img
+									<td class="cart__product__item"><img style="width: 150px"
 										src="img/shop/${wish.thumbnail }" alt="">
 										<div class="cart__product__item__title">
 											<h6>${wish.prodName}</h6>
@@ -29,8 +29,10 @@
 											</div>
 										</div></td>
 									<td class="cart__price">${wish.prodPrice}</td>
-									</td>
-									<td class="cart__close"><span class="icon_close"></span></td>
+									<td class="cart__close">
+									<input type="hidden" name="wishNo" value="${wish.wishNo}" /> 
+									<input type="hidden" name="prodNo" value="${wish.prodNo}" /> 
+									<span class="icon_close"></span></td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -74,3 +76,4 @@
 	</div>
 </section>
 <!-- Shop Cart Section End -->
+<script src="js/wishService.js"></script>

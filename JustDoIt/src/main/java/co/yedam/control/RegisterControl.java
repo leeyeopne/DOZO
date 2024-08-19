@@ -45,7 +45,7 @@ public class RegisterControl implements Control {
         boolean result = memberService.registerMember(registerMember);
         if (result) {
             // 회원 등록 성공 처리
-            resp.sendRedirect("/loginForm.do");
+            resp.sendRedirect("loginForm.do");
         } else {
             // 회원 등록 실패 처리
             req.setAttribute("error", "회원 등록에 실패했습니다.");

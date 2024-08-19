@@ -15,9 +15,27 @@
 			   prod_image4,
 			   prod_exp,
 			   prod_code,
-			   thumbnail	   
+			   prod_star,
+			   prod_category2   
 		FROM product
 		WHERE prod_no = #{prodNo}
+	</select>
+	
+	<select id="selectList" resultType="co.yedam.vo.ProductVO">
+		SELECT prod_no,
+			   prod_name,
+			   prod_price,
+			   prod_category,
+			   prod_image1,
+			   prod_image2,
+			   prod_image3,
+			   prod_image4,
+			   prod_exp,
+			   prod_code,
+			   prod_star,
+			   prod_category2	
+		FROM product
+		ORDER BY prod_no
 	</select>
 	
 </mapper>

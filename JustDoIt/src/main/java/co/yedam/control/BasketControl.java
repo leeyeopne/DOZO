@@ -1,12 +1,17 @@
 package co.yedam.control;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import co.yedam.common.Control;
 import co.yedam.service.BasketService;
@@ -38,20 +43,19 @@ public class BasketControl implements Control {
 		BasketService svc = new BasketServiceImpl();
 		boolean result = svc.addBasket(bvo);
 
-		// 장바구니 목록을 가져와서 request에 설정
-		List<BasketVO> basketList = svc.basketList(memberNo); // 장바구니 목록 가져오는 메서드 추가 필요
+		Map<String, Object> map = new HashMap<>();
+		try {
+			if(result) {
+				map.put("result", "Success");
+			}
+		} catch (Exception e) {
+			map.put("result", "Fail");
+		}
+		// json문자열 생성.
+		Gson gson = new GsonBuilder().setPrettyPrinting().create(); 
+		String json = gson.toJson(map);
 		
-		
-//        // 장바구니 목록의 총 가격 계산
-//        double totalCartPrice = 0.0;
-//        for (BasketVO basket : basketList) {
-//            totalCartPrice += basket.getTotalPrice();
-//        }
-		
-		
-		req.setAttribute("basketList", basketList);
-
-		req.getRequestDispatcher("product/basketForm.tiles").forward(req, resp);
+		resp.getWriter().print(json);
 
 	}
 }
