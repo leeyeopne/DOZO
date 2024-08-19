@@ -62,7 +62,7 @@
 								<li><a href="wishList.do?loginId=${sessionScope.loginId}"><span class="icon_heart_alt"></span>
 							      	<!-- wishList 갯수 구현 -->
 									<div class="tip">2</div> </a></li>
-								<li><a href="#"><span class="icon_bag_alt"></span>
+								<li><a href="basketForm.do?memberNo=${sessionScope.memberNo} "><span class="icon_bag_alt"></span>
 										<div class="tip"></div> </a></li>
 							</ul>
 						</c:otherwise>

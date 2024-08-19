@@ -11,6 +11,24 @@
 	</listener>
 
 	<servlet>
+		<servlet-name>ConfirmIdControl</servlet-name>
+		<servlet-class>co.yedam.control.ConfirmIdControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfirmIdControl</servlet-name>
+		<url-pattern>/confirmId</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegisterControl</servlet-name>
+		<servlet-class>co.yedam.control.RegisterControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterControl</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>front</servlet-name>
 		<servlet-class>co.yedam.web.FrontController</servlet-class>
 	</servlet>

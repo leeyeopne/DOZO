@@ -30,7 +30,6 @@
 <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-
 <body>
 	<!-- Page Preloder -->
 	<div id="preloder">
@@ -79,8 +78,8 @@
 									<li><a
 										href="productList.do?prodCategory=shoes&prodCategory2=kids&prodStar=0">shoes</a></li>
 								</ul></li>
+							<li><a href="productList.do?prodStar=5">Best Collection</a></li>
 							<li><a href="styleBookList.do">STYLE BOOK</a></li>
-							<li><a href="#">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -99,12 +98,13 @@
 								</div>
 
 								<ul class="header__right__widget">
-									<li><span class="icon_search search-switch"></span></li>
-									<li><a href="#"><span class="icon_heart_alt"></span>
-											<div class="tip">2</div> </a></li>
-									<li><a href="#"><span class="icon_bag_alt"></span>
-											<div class="tip">2</div> </a></li>
-								</ul>
+								<li><span class="icon_search search-switch"></span></li>
+								<li><a href="wishList.do?loginId=${sessionScope.loginId}"><span class="icon_heart_alt"></span>
+							      	<!-- wishList 갯수 구현 -->
+									<div class="tip">2</div> </a></li>
+								<li><a href="basketForm.do?memberNo=${sessionScope.memberNo} "><span class="icon_bag_alt"></span>
+										<div class="tip"></div> </a></li>
+							</ul>
 							</c:otherwise>
 						</c:choose>
 					</div>
@@ -123,10 +123,10 @@
 			<div class="categories__item categories__large__item set-bg"
 				data-setbg="img/mainimg3.jpg">
 				<div class="categories__text">
-					<h1>Best Seller</h1>
+					<h1 style="color:white;">Best Collection</h1>
 					<p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor
 						incidid-unt labore edolore magna aliquapendisse ultrices gravida.</p>
-					<a href="best.do">Shop now</a>
+					<a href="productList.do?prodStar=5" style="color:white;">Shop now</a>
 				</div>
 			</div>
 		</div>

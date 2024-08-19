@@ -1,12 +1,69 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="co.yedam.mapper.ProductDetailMapper">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.mapper.BasketMapper">
+
+	<!-- SQL 쿼리: BasketMapper.xml에서 insertBasket 쿼리를 정의하고 장바구니에 상품을 추가합니다. -->
+	<insert id="insertBasket">
+		insert into basket (cart_no, prod_no, member_no,
+		basket_date, product_color, product_size, product_quantity)
+		values(basket_seq.nextval, #{prodNo}, #{memberNo}, SYSDATE,
+		#{productColor}, #{productSize}, #{productQuantity})
+	</insert>
+
+	<!-- <select id="selectBasket" parameterType="int" resultType="co.yedam.vo.BasketVO"> 
+		select cart_no ,prod_no ,member_no ,basket_date ,basket_color ,basket_size 
+		,basket_quantity from basket where prod_no = #{prodNo} and member_no = #{memberNo} 
+		</select> -->
+	<resultMap id="basketResultMap" type="co.yedam.vo.BasketVO">
+		<id property="cartNo" column="cart_no" />
+		<result property="prodNo" column="prod_no" />
+		<result property="memberNo" column="member_no" />
+		<result property="productColor" column="product_color" />
+		<result property="productSize" column="product_size" />
+		<result property="productQuantity" column="product_quantity" />
+		<result property="basketDate" column="basket_date" />
+
+		<association property="product"
+			javaType="co.yedam.vo.ProductVO">
+			<result property="prodName" column="prod_name" />
+			<result property="prodPrice" column="prod_price" />
+			<result property="thumbnail" column="thumbnail" />
+			<result property="prodStar" column="prod_star" />
+		</association>
+	</resultMap>
+
+	<select id="selectBasket" parameterType="int" resultType="co.yedam.vo.BasketVO">
+		<!-- select cart_no ,prod_no ,member_no ,basket_date ,basket_color ,basket_size 
+			,basket_quantity from basket order by member_no -->
+
+		SELECT b.cart_no,
+			b.member_no,
+			b.prod_no,
+			p.prod_name,
+			p.prod_price,
+			p.prod_category,
+			p.prod_code,
+			p.thumbnail,
+			p.prod_category2,
+			p.prod_star,
+			b.basket_date,
+			b.product_color,
+			b.product_size,
+			b.product_quantity
+		FROM BASKET b
+			JOIN PRODUCT p
+				ON b.prod_no = p.prod_no
+		WHERE b.member_no = #{memberNo}
+	</select>
+
+	<delete id="deleteBasket" parameterType="co.yedam.vo.BasketVO">
+		delete from basket
+		where
+		cart_no = #{cartNo}
+
+	</delete>
 
 
 
 
-	
-	
 </mapper>
