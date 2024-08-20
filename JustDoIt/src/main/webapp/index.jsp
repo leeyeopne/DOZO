@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="Ashion Template">
@@ -98,13 +97,15 @@
 								</div>
 
 								<ul class="header__right__widget">
-								<li><span class="icon_search search-switch"></span></li>
-								<li><a href="wishList.do?loginId=${sessionScope.loginId}"><span class="icon_heart_alt"></span>
-							      	<!-- wishList 갯수 구현 -->
-									<div class="tip">2</div> </a></li>
-								<li><a href="basketForm.do?memberNo=${sessionScope.memberNo} "><span class="icon_bag_alt"></span>
-										<div class="tip"></div> </a></li>
-							</ul>
+									<li><span class="icon_search search-switch"></span></li>
+									<li><a href="wishList.do?loginId=${sessionScope.loginId}"><span
+											class="icon_heart_alt"></span> <!-- wishList 갯수 구현 -->
+											<div class="tip">2</div> </a></li>
+									<li><a
+										href="basketForm.do?memberNo=${sessionScope.memberNo} "><span
+											class="icon_bag_alt"></span>
+											<div class="tip"></div> </a></li>
+								</ul>
 							</c:otherwise>
 						</c:choose>
 					</div>
@@ -123,10 +124,11 @@
 			<div class="categories__item categories__large__item set-bg"
 				data-setbg="img/mainimg3.jpg">
 				<div class="categories__text">
-					<h1 style="color:white;">Best Collection</h1>
+					<h1 style="color: white;">Best Collection</h1>
 					<p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor
 						incidid-unt labore edolore magna aliquapendisse ultrices gravida.</p>
-					<a href="productList.do?prodStar=5" style="color:white;">Shop now</a>
+					<a href="productList.do?prodStar=5" style="color: white;">Shop
+						now</a>
 				</div>
 			</div>
 		</div>
@@ -153,6 +155,9 @@
 					</ul>
 				</div>
 			</div>
+			<c:if test="${not empty product.prodImage}">
+				<img src="img/shop/${product.prodImage}" alt="${product.prodName}">
+			</c:if>
 			<c:forEach var="product" items="${productList }">
 				<div class="row property__gallery">
 					<div
@@ -622,7 +627,7 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.nicescroll.min.js"></script>
 	<script src="js/main.js"></script>
-	
+
 </body>
 
 </html>

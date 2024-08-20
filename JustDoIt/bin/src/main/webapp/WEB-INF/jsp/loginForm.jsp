@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- 상품목록  -->
+
+<style>
+	
+	#loginBtn {
+		width: 330px;
+		margin-left: 30px;
+		border-radius: 0px;
+		background-color: grey; /* 비활성화 시의 색상 */
+		cursor: not-allowed; /* 비활성화 시의 커서 */
+	}
+	
+</style>
 
 <!-- Checkout Section Begin -->
 <section class="checkout spad">
@@ -16,7 +27,7 @@
 								<p>
 									ID <span>*</span>
 								</p>
-								<input type="text" name="loginId">
+								<input type="text" name="loginId" id="loginId" oninput="validateInputs()">
 							</div>
 						</div>
 
@@ -25,19 +36,17 @@
 								<p>
 									Password <span>*</span>
 								</p>
-								<input type="password" name="loginPw">
+								<input type="password" name="loginPw" id="loginPw" oninput="validateInputs()">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<button type="submit" class="site-btn">Place oder</button>
+			<button type="submit" class="site-btn" id="loginBtn" disabled>Login</button>
 		</form>
 	</div>
 </section>
 <!-- Checkout Section End -->
-
-
 
 <!-- Search Begin -->
 <div class="search-model">
@@ -49,3 +58,21 @@
 	</div>
 </div>
 <!-- Search End -->
+
+<script>
+	function validateInputs() {
+		const loginId = document.getElementById('loginId').value;
+		const loginPw = document.getElementById('loginPw').value;
+		const loginBtn = document.getElementById('loginBtn');
+		
+		if (loginId.length >= 4 && loginPw.length >= 4) {
+			loginBtn.disabled = false;
+			loginBtn.style.backgroundColor = '#dc3545'; // 활성화 시의 색상
+			loginBtn.style.cursor = 'pointer'; // 활성화 시의 커서
+		} else {
+			loginBtn.disabled = true;
+			loginBtn.style.backgroundColor = 'grey'; // 비활성화 시의 색상
+			loginBtn.style.cursor = 'not-allowed'; // 비활성화 시의 커서
+		}
+	}
+</script>

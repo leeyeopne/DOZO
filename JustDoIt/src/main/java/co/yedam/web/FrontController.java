@@ -17,6 +17,7 @@ import co.yedam.control.BasketControl;
 import co.yedam.control.BasketFormControl;
 import co.yedam.control.DeleteBasketControl;
 import co.yedam.control.DeleteStyleBookControl;
+import co.yedam.control.DeleteWishControl;
 import co.yedam.control.IdCheckControl;
 import co.yedam.control.ImageDownload;
 import co.yedam.control.LoginFormControl;
@@ -36,6 +37,7 @@ import co.yedam.control.StyleBookListControl;
 import co.yedam.control.UpdateStyleBookControl;
 import co.yedam.control.UpdateStyleBookFormControl;
 import co.yedam.control.WishlistControl;
+import co.yedam.control.indexControl;
 import co.yedam.control.loginControl;
 import co.yedam.control.logoutControl;
 
@@ -124,9 +126,13 @@ public class FrontController extends HttpServlet {
 		map.put("/wishList.do", new PageWishlistControl());
 		// 위시리스트 데이터 추가
 		map.put("/addWishlist.do", new WishlistControl());
+		// 위시리스트 데이터 삭제
+		map.put("/removeWish.do", new DeleteWishControl());
 	
 		// 주문 페이지
 		map.put("/orderForm.do", new OrderFormControl());
+		// 인덱스test
+		map.put("/index.do", new indexControl());
 
 	
 	}

@@ -1,107 +1,211 @@
-DROP SEQUENCE board_seq;
-DROP TABLE basket;
-DROP TABLE board;
-DROP TABLE orderdetails;
-DROP TABLE ordering;
-DROP TABLE product;
-DROP TABLE basket;
-DROP TABLE wishlist;
-DROP TABLE review;
-DROP TABLE productinventory;
-DROP TABLE member;
+--------------------------------------------------------
+--  파일이 생성됨 - 일요일-8월-18-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table MEMBER
+--------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------
+  CREATE TABLE "NIKE"."MEMBER" 
+   (	"MEMBER_NO" NUMBER, 
+	"MEMBER_ID" VARCHAR2(50 BYTE), 
+	"MEMBER_PW" VARCHAR2(30 BYTE), 
+	"MEMBER_NM" VARCHAR2(30 BYTE), 
+	"ADDRESS" VARCHAR2(200 BYTE), 
+	"EMAIL" VARCHAR2(100 BYTE), 
+	"PHONE" VARCHAR2(30 BYTE), 
+	"CREATION_DATE" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into NIKE.MEMBER
+SET DEFINE OFF;
+Insert into NIKE.MEMBER (MEMBER_NO,MEMBER_ID,MEMBER_PW,MEMBER_NM,ADDRESS,EMAIL,PHONE,CREATION_DATE) values (21,'user03','user03user03!','이승주','대구 북구 팔달로 105 (노원동3가)123123','lee@gmail.com','010-1234-1234',to_date('24/08/11','RR/MM/DD'));
+--------------------------------------------------------
+--  DDL for Index SYS_C007192
+--------------------------------------------------------
 
-CREATE SEQUENCE member_seq; -- 멤버 번호
-CREATE SEQUENCE prod_seq; -- 제품 번호
-CREATE SEQUENCE basket_seq; -- 장바구니 번호
-CREATE SEQUENCE wishlist_seq; -- 위시리스트 번호
-CREATE SEQUENCE board_seq; -- 게시물 번호
+  CREATE UNIQUE INDEX "NIKE"."SYS_C007192" ON "NIKE"."MEMBER" ("MEMBER_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table MEMBER
+--------------------------------------------------------
 
+  ALTER TABLE "NIKE"."MEMBER" ADD PRIMARY KEY ("MEMBER_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "NIKE"."MEMBER" MODIFY ("PHONE" NOT NULL ENABLE);
+  ALTER TABLE "NIKE"."MEMBER" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "NIKE"."MEMBER" MODIFY ("ADDRESS" NOT NULL ENABLE);
+  ALTER TABLE "NIKE"."MEMBER" MODIFY ("MEMBER_NM" NOT NULL ENABLE);
+  ALTER TABLE "NIKE"."MEMBER" MODIFY ("MEMBER_PW" NOT NULL ENABLE);
+  ALTER TABLE "NIKE"."MEMBER" MODIFY ("MEMBER_ID" NOT NULL ENABLE);
+  ALTER TABLE "NIKE"."MEMBER" MODIFY ("MEMBER_NO" NOT NULL ENABLE);
+  
+  --------------------------------------------------------
+--  파일이 생성됨 - 일요일-8월-18-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table BASKET
+--------------------------------------------------------
 
-CREATE TABLE member
-(   member_no      NUMBER          NOT NULL, -- 멤버 번호
-    member_id      VARCHAR2(50)    NOT NULL, -- 멤버 아이디
-    member_pw      VARCHAR2(30)    NOT NULL, -- 멤버 비밀번호
-    member_nm      VARCHAR2(30)    NOT NULL, -- 멤버 이름
-    address        VARCHAR2(200)   NOT NULL, -- 주소
-    email          VARCHAR2(100)   NOT NULL, -- 이메일
-    phone          VARCHAR2(30)    NOT NULL, -- 전화번호
-    creation_date  DATE            NULL,  -- 가입날짜
-    PRIMARY KEY(member_no)                           
-);
-    
-       
-CREATE TABLE product(
-prod_no NUMBER,              -- 제품번호
-prod_name VARCHAR2(100),     -- 제품이름
-prod_price NUMBER,           -- 제품가격
-prod_category VARCHAR2(200), -- 제품 카테고리
-prod_image1 VARCHAR2(500),   -- 제품 이미지1
-prod_image2 VARCHAR2(500),   -- 제품 이미지2
-prod_image3 VARCHAR2(500),   -- 제품 이미지3
-prod_image4 VARCHAR2(500),   -- 제품 이미지4
-prod_exp VARCHAR2(600),      -- 제품 설명
-prod_code VARCHAR2(50),      -- 제품 코드
-thumbnail VARCHAR2(500),     -- 제품 썸네일
-PRIMARY KEY(prod_no)
-);
+  CREATE TABLE "NIKE"."BASKET" 
+   (	"CART_NO" NUMBER, 
+	"PROD_NO" NUMBER, 
+	"MEMBER_NO" NUMBER, 
+	"BASKET_DATE" DATE, 
+	"PRODUCT_COLOR" VARCHAR2(20 BYTE), 
+	"PRODUCT_SIZE" VARCHAR2(20 BYTE), 
+	"PRODUCT_QUANTITY" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into NIKE.BASKET
+SET DEFINE OFF;
+Insert into NIKE.BASKET (CART_NO,PROD_NO,MEMBER_NO,BASKET_DATE,PRODUCT_COLOR,PRODUCT_SIZE,PRODUCT_QUANTITY) values (140,29,21,to_date('24/08/17','RR/MM/DD'),'black','m',4);
+Insert into NIKE.BASKET (CART_NO,PROD_NO,MEMBER_NO,BASKET_DATE,PRODUCT_COLOR,PRODUCT_SIZE,PRODUCT_QUANTITY) values (126,29,21,to_date('24/08/14','RR/MM/DD'),'red',null,1);
+Insert into NIKE.BASKET (CART_NO,PROD_NO,MEMBER_NO,BASKET_DATE,PRODUCT_COLOR,PRODUCT_SIZE,PRODUCT_QUANTITY) values (138,29,21,to_date('24/08/16','RR/MM/DD'),'grey','m',4);
+--------------------------------------------------------
+--  DDL for Index SYS_C007245
+--------------------------------------------------------
 
-ALTER TABLE product ADD prod_category2 VARCHAR(20);
-ALTER TABLE product MODIFY prod_price VARCHAR2(100);
-ALTER TABLE product ADD prod_star number;
+  CREATE UNIQUE INDEX "NIKE"."SYS_C007245" ON "NIKE"."BASKET" ("CART_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table BASKET
+--------------------------------------------------------
 
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'남자 상의 test1','123,000 원','top','mentop1.png',5,'men');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'남자 하의 test1','99,000 원','bottom','menbottom1.jpg',4,'men');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'나이키 머큐리얼 슈퍼플라이 10 엘리트 일렉트릭','339,000 원','shoes','nikefootball.png',3,'men');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'여자 상의 test1','209,000 원','top','womentop1.png',2,'women');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'여자 하의 test1','109,000 원','bottom','womenbottom1.png',1,'women');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'여자 신발 test1','139,000 원','shoes','nikeairjordan.jpg',5,'women');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'어린이 상의 test1','109,000 원','top','kidtop1.jpg',5,'kids');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'어린이 하의 test1','59,000 원','bottom','kidbottom1.png',3,'kids');
-Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
-values (prod_seq.NEXTVAL,'어린이 신발 test1','29,000 원','shoes','nikeairforce.png',4,'kids');
+  ALTER TABLE "NIKE"."BASKET" ADD PRIMARY KEY ("CART_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table BASKET
+--------------------------------------------------------
 
+  ALTER TABLE "NIKE"."BASKET" ADD FOREIGN KEY ("PROD_NO")
+	  REFERENCES "NIKE"."PRODUCT" ("PROD_NO") ENABLE;
+  ALTER TABLE "NIKE"."BASKET" ADD FOREIGN KEY ("MEMBER_NO")
+	  REFERENCES "NIKE"."MEMBER" ("MEMBER_NO") ENABLE;
 
-CREATE TABLE basket(
-cart_no NUMBER,              -- 장바구니 번호
-prod_no NUMBER,              -- 제품번호
-member_no NUMBER,            -- 멤버번호
-basket_date DATE,            -- 장바구니 넣은 날짜
-product_color VARCHAR2(20),  -- 장바구니 제품 색
-product_size VARCHAR2(20),   -- 장바구니 제품 사이즈
-product_quantity NUMBER,     -- 장바구니 제품 양
-PRIMARY KEY(cart_no),
-FOREIGN KEY(prod_no) REFERENCES product(prod_no),  -- 제품번호 외래키 참조
-FOREIGN KEY(member_no) REFERENCES member(member_no) -- 멤버번호 외래키 참조
-);
+	  --------------------------------------------------------
+--  파일이 생성됨 - 일요일-8월-18-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PRODUCT
+--------------------------------------------------------
 
+  CREATE TABLE "NIKE"."PRODUCT" 
+   (	"PROD_NO" NUMBER, 
+	"PROD_NAME" VARCHAR2(100 BYTE), 
+	"PROD_PRICE" NUMBER, 
+	"PROD_CATEGORY" VARCHAR2(200 BYTE), 
+	"PROD_IMAGE1" VARCHAR2(500 BYTE), 
+	"PROD_IMAGE2" VARCHAR2(500 BYTE), 
+	"PROD_IMAGE3" VARCHAR2(500 BYTE), 
+	"PROD_IMAGE4" VARCHAR2(500 BYTE), 
+	"PROD_EXP" VARCHAR2(600 BYTE), 
+	"PROD_CODE" VARCHAR2(50 BYTE), 
+	"THUMBNAIL" VARCHAR2(500 BYTE), 
+	"PROD_CATEGORY2" VARCHAR2(20 BYTE), 
+	"PROD_STAR" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into NIKE.PRODUCT
+SET DEFINE OFF;
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (21,'남자 하의 test1',99000,'bottom',null,null,null,null,null,null,'menbottom1.jpg','men',4);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (22,'나이키 머큐리얼 슈퍼플라이 10 엘리트 일렉트릭',339000,'shoes',null,null,null,null,null,null,'nikefootball.png','men',3);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (23,'여자 상의 test1',209000,'top',null,null,null,null,null,null,'womentop1.png','women',2);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (24,'여자 하의 test1',109000,'bottom',null,null,null,null,null,null,'womenbottom1.png','women',1);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (25,'여자 신발 test1',139000,'shoes',null,null,null,null,null,null,'nikeairjordan.jpg','women',5);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (26,'어린이 상의 test1',109000,'top',null,null,null,null,null,null,'kidtop1.jpg','kids',5);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (27,'어린이 하의 test1',59000,'bottom',null,null,null,null,null,null,'kidbottom1.png','kids',3);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (28,'어린이 신발 test1',29000,'shoes',null,null,null,null,null,null,'nikeairforce.png','kids',4);
+Insert into NIKE.PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,PROD_IMAGE1,PROD_IMAGE2,PROD_IMAGE3,PROD_IMAGE4,PROD_EXP,PROD_CODE,THUMBNAIL,PROD_CATEGORY2,PROD_STAR) values (29,'나이키 에어 포스 1 07 LV8',149000,'shoes','AIR1.jpg','AIR2.jpg','AIR3.jpg','AIR4.jpg','편안하고 내구성이 뛰어나며 클래식하죠. 1위로 손꼽히는 데는 이유가 있습니다. 클래식한 1980년대 디자인에 깔끔한 소재를 더해 코트에서도, 일상 속에서도 멋진 스타일을 선사합니다. 섬세하게 디자인된 플랫폼이 적절한 높이를 선사합니다.','FQ8714-002','https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/a8ae66e9-92bf-41bc-ab98-b33828503caa/v2k-런-신발-XYzZ5RXd.png','men',3);
+--------------------------------------------------------
+--  DDL for Index SYS_C007241
+--------------------------------------------------------
 
-CREATE TABLE wishlist(
-wish_no NUMBER,      -- 위시리스트 번호
-prod_no NUMBER,      -- 제품 번호
-member_no NUMBER,    -- 멤버 번호
-wish_date DATE,      -- 위시리스트 날짜
-PRIMARY KEY(wish_no),
-FOREIGN KEY(prod_no) REFERENCES product(prod_no),  -- 제품번호 외래키 참조
-FOREIGN KEY(member_no) REFERENCES member(member_no) -- 멤버번호 외래키 참조
-);
+  CREATE UNIQUE INDEX "NIKE"."SYS_C007241" ON "NIKE"."PRODUCT" ("PROD_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table PRODUCT
+--------------------------------------------------------
 
+  ALTER TABLE "NIKE"."PRODUCT" ADD PRIMARY KEY ("PROD_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
 
-CREATE TABLE style_tbl (
-    board_no NUMBER,
-    title VARCHAR2(200),
-    writer VARCHAR2(50),
-    content VARCHAR2(1000),
-    image VARCHAR2(1000),
-    writer_date DATE DEFAULT sysdate,
-    view_cnt NUMBER DEFAULT 0
-);
+  --------------------------------------------------------
+--  파일이 생성됨 - 일요일-8월-18-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table WISHLIST
+--------------------------------------------------------
+
+  CREATE TABLE "NIKE"."WISHLIST" 
+   (	"WISH_NO" NUMBER, 
+	"PROD_NO" NUMBER, 
+	"MEMBER_NO" NUMBER, 
+	"WISH_DATE" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into NIKE.WISHLIST
+SET DEFINE OFF;
+Insert into NIKE.WISHLIST (WISH_NO,PROD_NO,MEMBER_NO,WISH_DATE) values (49,29,21,to_date('24/08/12','RR/MM/DD'));
+Insert into NIKE.WISHLIST (WISH_NO,PROD_NO,MEMBER_NO,WISH_DATE) values (50,29,21,to_date('24/08/13','RR/MM/DD'));
+Insert into NIKE.WISHLIST (WISH_NO,PROD_NO,MEMBER_NO,WISH_DATE) values (51,29,21,to_date('24/08/13','RR/MM/DD'));
+Insert into NIKE.WISHLIST (WISH_NO,PROD_NO,MEMBER_NO,WISH_DATE) values (52,29,21,to_date('24/08/13','RR/MM/DD'));
+Insert into NIKE.WISHLIST (WISH_NO,PROD_NO,MEMBER_NO,WISH_DATE) values (53,29,21,to_date('24/08/13','RR/MM/DD'));
+Insert into NIKE.WISHLIST (WISH_NO,PROD_NO,MEMBER_NO,WISH_DATE) values (54,29,21,to_date('24/08/13','RR/MM/DD'));
+--------------------------------------------------------
+--  DDL for Index SYS_C007242
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "NIKE"."SYS_C007242" ON "NIKE"."WISHLIST" ("WISH_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table WISHLIST
+--------------------------------------------------------
+
+  ALTER TABLE "NIKE"."WISHLIST" ADD PRIMARY KEY ("WISH_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table WISHLIST
+--------------------------------------------------------
+
+  ALTER TABLE "NIKE"."WISHLIST" ADD FOREIGN KEY ("PROD_NO")
+	  REFERENCES "NIKE"."PRODUCT" ("PROD_NO") ENABLE;
+  ALTER TABLE "NIKE"."WISHLIST" ADD FOREIGN KEY ("MEMBER_NO")
+	  REFERENCES "NIKE"."MEMBER" ("MEMBER_NO") ENABLE;
+
+  
