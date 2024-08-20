@@ -1,7 +1,9 @@
 /**
- * basketTotal.js
+ * orderService.js
  */
-console.log("basketTotal.js");
+
+/*
+console.log("orderService.js");
 
 
 
@@ -45,6 +47,34 @@ function updateCartTotal() {
     // 제품 목록을 업데이트
     updateOrderProductsList();
 }
+    
+    
+// 주문하기 버튼 클릭 시 총액을 서버로 전송
+document.querySelector('.primary-btn').addEventListener('click', function() {
+    let totalAmount = document.getElementById('orderTotal').innerText;
+
+    // 총액을 서버로 전송
+    const xhtp = new XMLHttpRequest();
+    xhtp.open('POST', 'orderForm.do', true);
+    xhtp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhtp.send(`totalAmount=${totalAmount}`);
+
+    xhtp.onload = function() {
+        if (xhtp.status >= 200 && xhtp.status < 300) {
+            // 요청이 성공적으로 완료된 경우
+            console.log("Order submitted successfully.");
+            // 필요 시 페이지 리디렉션 또는 성공 메시지 표시
+        } else {
+            // 요청 실패
+            console.error("Order submission failed.");
+        }
+    };
+});
+
+// 페이지 로드 시 초기 총액 계산
+document.addEventListener('DOMContentLoaded', updateCartTotal);    
+    
+    
     
 //    // 장바구니 총액 업데이트
 //    let cartTotalElement = document.querySelector('.cart__total__procced .cartTotal');
@@ -131,3 +161,6 @@ function updateCartTotal() {
 	
 //	document.querySelector('.total-price').innerText = result;
 //});
+
+
+*/

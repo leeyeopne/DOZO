@@ -43,19 +43,6 @@ public class BasketControl implements Control {
 		BasketService svc = new BasketServiceImpl();
 		boolean result = svc.addBasket(bvo);
 
-		Map<String, Object> map = new HashMap<>();
-		try {
-			if(result) {
-				map.put("result", "Success");
-			}
-		} catch (Exception e) {
-			map.put("result", "Fail");
-		}
-		// json문자열 생성.
-		Gson gson = new GsonBuilder().setPrettyPrinting().create(); 
-		String json = gson.toJson(map);
-		
-		resp.getWriter().print(json);
 
 	}
 }

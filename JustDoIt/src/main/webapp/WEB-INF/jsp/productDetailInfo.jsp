@@ -64,8 +64,8 @@
 
 					</div>
 
-					<div class="product__details__price" style="font-size: 25px">${product.prodPrice }원</div>
-					<p style="font-size: 15px">${product.prodExp }</p>
+					<div class="product__details__price" style="font-size: 25px; color: #646063">${product.prodPrice }원</div>
+					<p style="font-size: 15px"></p>
 
 					<input type="hidden" name="prodNo" value="${product.prodNo}" />
 					<div class="product__details__widget">
@@ -137,7 +137,7 @@
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="tabs-1" role="tabpanel">
-							<h6>Description</h6>
+							<h6></h6>
 							<p>${product.prodExp }</p>
 						</div>
 						<div class="tab-pane" id="tabs-3" role="tabpanel">

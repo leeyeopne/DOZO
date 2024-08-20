@@ -10,11 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.yedam.control.ImageDownload;
-import co.yedam.control.PagingCount;
-import co.yedam.control.ProductControl;
-import co.yedam.control.RemoveReplyControl;
-
 import co.yedam.common.Control;
 import co.yedam.control.AddReplyControl;
 import co.yedam.control.AddStyleBookControl;
@@ -24,12 +19,12 @@ import co.yedam.control.DeleteBasketControl;
 import co.yedam.control.IdCheckControl;
 import co.yedam.control.ImageDownload;
 import co.yedam.control.LoginFormControl;
-import co.yedam.control.PageWishlistControl;
-
+import co.yedam.control.ModifyBasketControl;
+import co.yedam.control.OrderControl;
 import co.yedam.control.OrderFormControl;
-
+import co.yedam.control.PageWishlistControl;
 import co.yedam.control.PagingCount;
-
+import co.yedam.control.ProductControl;
 import co.yedam.control.ProductDetailControl;
 import co.yedam.control.ProductListControl;
 import co.yedam.control.RegisterControl;
@@ -114,6 +109,10 @@ public class FrontController extends HttpServlet {
 		// 장바구니 삭제
 		map.put("/removeBasket.do", new DeleteBasketControl());
 
+		// 장바구니 물품 갯수 수정
+		map.put("/modifyBasket.do", new ModifyBasketControl());
+		
+		
 		// 위시리스트 페이지
 		map.put("/wishList.do", new PageWishlistControl());
 		// 위시리스트 데이터 추가
@@ -121,7 +120,8 @@ public class FrontController extends HttpServlet {
 	
 		// 주문 페이지
 		map.put("/orderForm.do", new OrderFormControl());
-
+		// 주문 결제 페이지
+		map.put("/paymentForm.do", new OrderControl());
 	
 	}
 

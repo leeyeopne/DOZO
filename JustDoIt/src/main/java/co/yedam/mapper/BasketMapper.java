@@ -14,5 +14,9 @@ public interface BasketMapper {
 
 	int deleteBasket(int cartNo);
 
+	
+	
+	int updateBasket(BasketVO basket);
+
 
 }

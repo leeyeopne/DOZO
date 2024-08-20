@@ -30,20 +30,13 @@
 
 /* Template default CSS
 /*----------------------------------------*/
-
-html,
-body {
+html, body {
 	height: 100%;
 	font-family: "Montserrat", sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
@@ -87,21 +80,16 @@ img {
 	max-width: 100%;
 }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+input:focus, select:focus, button:focus, textarea:focus {
 	outline: none;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
 	text-decoration: none;
 	outline: none;
 }
 
-ul,
-ol {
+ul, ol {
 	padding: 0;
 	margin: 0;
 }
@@ -109,7 +97,6 @@ ol {
 /*---------------------
   Helper CSS
 -----------------------*/
-
 .section-title {
 	margin-bottom: 45px;
 }
@@ -143,21 +130,13 @@ ol {
 	padding-bottom: 100px;
 }
 
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.text-white p,
-.text-white span,
-.text-white li,
-.text-white a {
+.text-white h1, .text-white h2, .text-white h3, .text-white h4,
+	.text-white h5, .text-white h6, .text-white p, .text-white span,
+	.text-white li, .text-white a {
 	color: #fff;
 }
 
 /* buttons */
-
 .primary-btn {
 	display: inline-block;
 	font-size: 14px;
@@ -181,7 +160,6 @@ ol {
 }
 
 /* Preloder */
-
 #preloder {
 	position: fixed;
 	width: 100%;
@@ -243,7 +221,6 @@ ol {
 		border-left-color: transparent;
 	}
 }
-
 .spacial-controls {
 	position: fixed;
 	width: 111px;
@@ -315,7 +292,6 @@ ol {
 /*---------------------
   Header
 -----------------------*/
-
 .header {
 	background: #ffffff;
 	-webkit-box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
@@ -504,7 +480,6 @@ ol {
 /*---------------------
   Banner
 -----------------------*/
-
 .banner {
 	height: 500px;
 }
@@ -574,7 +549,6 @@ ol {
 /*---------------------
   Trend
 -----------------------*/
-
 .trend {
 	padding-top: 80px;
 	padding-bottom: 50px;
@@ -638,7 +612,6 @@ ol {
 /*---------------------
   Discount
 -----------------------*/
-
 .discount__pic img {
 	min-width: 100%;
 	height: 100%;
@@ -749,7 +722,6 @@ ol {
 /*---------------------
   Services
 -----------------------*/
-
 .services {
 	padding-top: 80px;
 	padding-bottom: 50px;
@@ -782,7 +754,6 @@ ol {
 /*---------------------
   Instagram
 -----------------------*/
-
 .instagram__item {
 	height: 320px;
 	display: -webkit-box;
@@ -847,7 +818,6 @@ ol {
 /*---------------------
   Footer
 -----------------------*/
-
 .footer {
 	padding-top: 55px;
 }
@@ -991,7 +961,6 @@ ol {
 /*---------------------
   Breadcrumb
 -----------------------*/
-
 .breadcrumb-option {
 	padding-top: 35px;
 }
@@ -1027,7 +996,6 @@ ol {
 /*---------------------
   Categories
 -----------------------*/
-
 .categories {
 	overflow: hidden;
 	margin-top: 10px;
@@ -1101,21 +1069,16 @@ img {
 	max-width: 100%;
 }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+input:focus, select:focus, button:focus, textarea:focus {
 	outline: none;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
 	text-decoration: none;
 	outline: none;
 }
 
-ul,
-ol {
+ul, ol {
 	padding: 0;
 	margin: 0;
 }
@@ -1123,7 +1086,6 @@ ol {
 /*---------------------
   Helper CSS
 -----------------------*/
-
 .section-title {
 	margin-bottom: 45px;
 }
@@ -1157,21 +1119,13 @@ ol {
 	padding-bottom: 100px;
 }
 
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.text-white p,
-.text-white span,
-.text-white li,
-.text-white a {
+.text-white h1, .text-white h2, .text-white h3, .text-white h4,
+	.text-white h5, .text-white h6, .text-white p, .text-white span,
+	.text-white li, .text-white a {
 	color: #fff;
 }
 
 /* buttons */
-
 .primary-btn {
 	display: inline-block;
 	font-size: 14px;
@@ -1195,7 +1149,6 @@ ol {
 }
 
 /* Preloder */
-
 #preloder {
 	position: fixed;
 	width: 100%;
@@ -1257,7 +1210,6 @@ ol {
 		border-left-color: transparent;
 	}
 }
-
 .spacial-controls {
 	position: fixed;
 	width: 111px;
@@ -1329,7 +1281,6 @@ ol {
 /*---------------------
   Header
 -----------------------*/
-
 .header {
 	background: #ffffff;
 	-webkit-box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
@@ -1518,7 +1469,6 @@ ol {
 /*---------------------
   Banner
 -----------------------*/
-
 .banner {
 	height: 500px;
 }
@@ -1588,7 +1538,6 @@ ol {
 /*---------------------
   Trend
 -----------------------*/
-
 .trend {
 	padding-top: 80px;
 	padding-bottom: 50px;
@@ -1652,7 +1601,6 @@ ol {
 /*---------------------
   Discount
 -----------------------*/
-
 .discount__pic img {
 	min-width: 100%;
 	height: 100%;
@@ -1763,7 +1711,6 @@ ol {
 /*---------------------
   Services
 -----------------------*/
-
 .services {
 	padding-top: 80px;
 	padding-bottom: 50px;
@@ -1796,7 +1743,6 @@ ol {
 /*---------------------
   Instagram
 -----------------------*/
-
 .instagram__item {
 	height: 320px;
 	display: -webkit-box;
@@ -1861,7 +1807,6 @@ ol {
 /*---------------------
   Footer
 -----------------------*/
-
 .footer {
 	padding-top: 55px;
 }
@@ -2005,7 +1950,6 @@ ol {
 /*---------------------
   Breadcrumb
 -----------------------*/
-
 .breadcrumb-option {
 	padding-top: 35px;
 }
@@ -2041,7 +1985,6 @@ ol {
 /*---------------------
   Categories
 -----------------------*/
-
 .categories {
 	overflow: hidden;
 	margin-top: 10px;
@@ -2115,7 +2058,6 @@ ol {
 /*---------------------
   Product
 -----------------------*/
-
 .product {
 	padding-top: 60px;
 	padding-bottom: 50px;
@@ -2322,7 +2264,6 @@ ol {
 /*---------------------
   Shop
 -----------------------*/
-
 .shop {
 	padding-top: 70px;
 	padding-bottom: 80px;
@@ -2393,8 +2334,8 @@ ol {
 	line-height: 30px;
 }
 
-.categories__accordion .card-heading a:after,
-.categories__accordion .card-heading>a.active[aria-expanded=false]:after {
+.categories__accordion .card-heading a:after, .categories__accordion .card-heading>a.active[aria-expanded=false]:after
+	{
 	content: "";
 	font-size: 14px;
 	font-family: "FontAwesome";
@@ -2415,7 +2356,7 @@ ol {
 }
 
 .categories__accordion .card-heading a[aria-expanded=true]:after,
-.categories__accordion .card-heading>a.active:after {
+	.categories__accordion .card-heading>a.active:after {
 	content: "";
 	font-size: 14px;
 	font-family: "FontAwesome";
@@ -2512,23 +2453,19 @@ ol {
 	border-radius: 0;
 }
 
-.sidebar__sizes,
-.sidebar__color {
+.sidebar__sizes, .sidebar__color {
 	margin-bottom: 40px;
 }
 
-.sidebar__sizes .section-title,
-.sidebar__color .section-title {
+.sidebar__sizes .section-title, .sidebar__color .section-title {
 	margin-bottom: 35px;
 }
 
-.sidebar__sizes .section-title h4,
-.sidebar__color .section-title h4 {
+.sidebar__sizes .section-title h4, .sidebar__color .section-title h4 {
 	font-size: 18px;
 }
 
-.sidebar__sizes .size__list label,
-.sidebar__color .size__list label {
+.sidebar__sizes .size__list label, .sidebar__color .size__list label {
 	display: block;
 	padding-left: 20px;
 	font-size: 14px;
@@ -2538,25 +2475,25 @@ ol {
 	cursor: pointer;
 }
 
-.sidebar__sizes .size__list label input,
-.sidebar__color .size__list label input {
+.sidebar__sizes .size__list label input, .sidebar__color .size__list label input
+	{
 	position: absolute;
 	visibility: hidden;
 }
 
-.sidebar__sizes .size__list label input:checked~.checkmark,
-.sidebar__color .size__list label input:checked~.checkmark {
+.sidebar__sizes .size__list label input:checked ~.checkmark,
+	.sidebar__color .size__list label input:checked ~.checkmark {
 	border-color: #ca1515;
 }
 
-.sidebar__sizes .size__list label input:checked~.checkmark:after,
-.sidebar__color .size__list label input:checked~.checkmark:after {
+.sidebar__sizes .size__list label input:checked ~.checkmark:after,
+	.sidebar__color .size__list label input:checked ~.checkmark:after {
 	border-color: #ca1515;
 	opacity: 1;
 }
 
-.sidebar__sizes .size__list label .checkmark,
-.sidebar__color .size__list label .checkmark {
+.sidebar__sizes .size__list label .checkmark, .sidebar__color .size__list label .checkmark
+	{
 	position: absolute;
 	left: 0;
 	top: 4px;
@@ -2566,8 +2503,8 @@ ol {
 	border-radius: 2px;
 }
 
-.sidebar__sizes .size__list label .checkmark:after,
-.sidebar__color .size__list label .checkmark:after {
+.sidebar__sizes .size__list label .checkmark:after, .sidebar__color .size__list label .checkmark:after
+	{
 	position: absolute;
 	left: 0px;
 	top: -2px;
@@ -2620,7 +2557,6 @@ ol {
 /*---------------------
   Product Details
 -----------------------*/
-
 .product-details {
 	padding-top: 70px;
 	padding-bottom: 50px;
@@ -2802,7 +2738,7 @@ ol {
 	display: inline-block;
 	font-size: 14px;
 	color: #ffffff;
-	background: #ca1515;
+	background: #000000;
 	font-weight: 600;
 	text-transform: uppercase;
 	padding: 14px 30px 15px;
@@ -2810,6 +2746,10 @@ ol {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
+
+    border: none; /* 버튼 테두리 제거 (필요에 따라 조정) */
+    text-align: center; /* 글씨 중앙 정렬 */
+	
 }
 
 .product__details__button ul {
@@ -2845,6 +2785,7 @@ ol {
 .product__details__widget {
 	border-top: 1px solid #ebebeb;
 	padding-top: 35px;
+	 margin-bottom: 5px; 
 }
 
 .product__details__widget ul li {
@@ -2883,11 +2824,13 @@ ol {
 	visibility: hidden;
 }
 
-.product__details__widget ul li .stock__checkbox label input:checked~.checkmark {
+.product__details__widget ul li .stock__checkbox label input:checked ~.checkmark
+	{
 	border-color: #ca1515;
 }
 
-.product__details__widget ul li .stock__checkbox label input:checked~.checkmark:after {
+.product__details__widget ul li .stock__checkbox label input:checked ~.checkmark:after
+	{
 	border-color: #ca1515;
 	opacity: 1;
 }
@@ -2902,7 +2845,8 @@ ol {
 	border-radius: 2px;
 }
 
-.product__details__widget ul li .stock__checkbox label .checkmark:after {
+.product__details__widget ul li .stock__checkbox label .checkmark:after
+	{
 	position: absolute;
 	left: 0px;
 	top: -2px;
@@ -2924,7 +2868,8 @@ ol {
 	margin-right: 20px;
 }
 
-.product__details__widget ul li .color__checkbox label.active input~.checkmark:after {
+.product__details__widget ul li .color__checkbox label.active input ~.checkmark:after
+	{
 	border-color: #ffffff;
 	opacity: 1;
 }
@@ -2938,7 +2883,8 @@ ol {
 	visibility: hidden;
 }
 
-.product__details__widget ul li .color__checkbox label input:checked~.checkmark:after {
+.product__details__widget ul li .color__checkbox label input:checked ~.checkmark:after
+	{
 	border-color: #ffffff;
 	opacity: 1;
 }
@@ -2954,15 +2900,18 @@ ol {
 	content: "";
 }
 
-.product__details__widget ul li .color__checkbox label .checkmark.black-bg {
+.product__details__widget ul li .color__checkbox label .checkmark.black-bg
+	{
 	background: #111111;
 }
 
-.product__details__widget ul li .color__checkbox label .checkmark.grey-bg {
+.product__details__widget ul li .color__checkbox label .checkmark.grey-bg
+	{
 	background: #e4aa8b;
 }
 
-.product__details__widget ul li .color__checkbox label .checkmark:after {
+.product__details__widget ul li .color__checkbox label .checkmark:after
+	{
 	position: absolute;
 	left: 3px;
 	top: 5px;
@@ -3079,10 +3028,25 @@ ol {
 	margin-bottom: 35px;
 }
 
+
+.wishlist-btn {
+    width: auto; /* 버튼 너비를 자동으로 조정 */
+    font-size: 15px; /* 글씨 크기를 작게 조정 */
+    padding: 10px 15px; /* 버튼의 패딩을 줄여서 버튼 크기 축소 */
+    margin-left: 0; /* 버튼 왼쪽 여백 제거 */
+    border: none; /* 버튼 테두리 제거 (필요에 따라 조정) */
+    background-color: #000000; /* 버튼 배경색 (필요에 따라 조정) */
+    color: #ffffff; /* 글씨 색상 (필요에 따라 조정) */
+    border-radius: 50px; /* 버튼 모서리 둥글기 조정 (필요에 따라 조정) */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    text-align: center; /* 글씨 중앙 정렬 */
+    display: inline-block; /* 버튼이 인라인 블록으로 설정 */
+    line-height: 1.5; /* 줄 높이 조정 */
+}
+
 /*---------------------
   Shop Cart
 -----------------------*/
-
 .shop-cart {
 	padding-top: 70px;
 	padding-bottom: 90px;
@@ -3126,17 +3090,20 @@ ol {
 	margin-right: 25px;
 }
 
-.shop__cart__table tbody tr .cart__product__item .cart__product__item__title {
+.shop__cart__table tbody tr .cart__product__item .cart__product__item__title
+	{
 	overflow: hidden;
 	padding-top: 23px;
 }
 
-.shop__cart__table tbody tr .cart__product__item .cart__product__item__title h6 {
+.shop__cart__table tbody tr .cart__product__item .cart__product__item__title h6
+	{
 	color: #111111;
 	font-weight: 600;
 }
 
-.shop__cart__table tbody tr .cart__product__item .cart__product__item__title .rating i {
+.shop__cart__table tbody tr .cart__product__item .cart__product__item__title .rating i
+	{
 	font-size: 10px;
 	color: #e3c01c;
 	margin-right: -4px;
@@ -3144,7 +3111,7 @@ ol {
 
 .shop__cart__table tbody tr .cart__price {
 	font-size: 16px;
-	color: #ca1515;
+	color: rgb(100, 96, 99);
 	font-weight: 600;
 	width: 190px;
 }
@@ -3156,7 +3123,7 @@ ol {
 .shop__cart__table tbody tr .cart__quantity .pro-qty {
 	border: none;
 	padding: 0;
-	width: 110px;
+	width: 80px;
 	border-radius: 0;
 }
 
@@ -3171,7 +3138,7 @@ ol {
 
 .shop__cart__table tbody tr .cart__total {
 	font-size: 16px;
-	color: #ca1515;
+	color: rgb(100, 96, 99);
 	font-weight: 600;
 	width: 150px;
 }
@@ -3295,7 +3262,7 @@ ol {
 }
 
 .cart__total__procced ul li span {
-	color: #ca1515;
+	color: rgb(0, 0, 0);
 	float: right;
 }
 
@@ -3306,10 +3273,24 @@ ol {
 	padding: 12px 0 10px;
 }
 
+.modify-btn {
+	width: auto; /* 버튼 너비를 자동으로 조정 */
+	font-size: 3px; /* 글씨 크기를 작게 조정 */
+	padding: 5px 10px; /* 버튼의 패딩을 줄여서 버튼 크기 축소 */
+	margin-left: 0; /* 버튼 왼쪽 여백 제거 */
+	border: none; /* 버튼 테두리 제거 (필요에 따라 조정) */
+	background-color: black; /* 버튼 배경색 (필요에 따라 조정) */
+	color: #ffffff; /* 글씨 색상 (필요에 따라 조정) */
+	border-radius: 25px; /* 버튼 모서리 둥글기 조정 (필요에 따라 조정) */
+	cursor: pointer; /* 커서 포인터로 변경 */
+	text-align: center; /* 글씨 중앙 정렬 */
+	display: inline-block; /* 버튼이 인라인 블록으로 설정 */
+	line-height: 1.5; /* 줄 높이 조정 */
+}
+
 /*---------------------
   Checkout
 -----------------------*/
-
 .checkout {
 	padding-top: 80px;
 	padding-bottom: 70px;
@@ -3365,7 +3346,8 @@ ol {
 	color: #666666;
 }
 
-.checkout__form .checkout__form__input input::-webkit-input-placeholder {
+.checkout__form .checkout__form__input input::-webkit-input-placeholder
+	{
 	color: #666666;
 }
 
@@ -3405,11 +3387,13 @@ ol {
 	visibility: hidden;
 }
 
-.checkout__form .checkout__form__checkbox label input:checked~.checkmark {
+.checkout__form .checkout__form__checkbox label input:checked ~.checkmark
+	{
 	border-color: #ca1515;
 }
 
-.checkout__form .checkout__form__checkbox label input:checked~.checkmark:after {
+.checkout__form .checkout__form__checkbox label input:checked ~.checkmark:after
+	{
 	border-color: #ca1515;
 	opacity: 1;
 }
@@ -3455,17 +3439,17 @@ ol {
 
 .checkout__order .site-btn {
 	display: block; /* Ensure the button stays on its own line */
-    width: 200px; /* Fixed width */
-    height: 50px; /* Fixed height */
-    margin: 20px auto; /* Center the button horizontally */
-    padding: 10px 0; /* Vertical padding */
-    text-align: center; /* Center text */
-    background-color: #333; /* Background color */
-    color: white; /* Text color */
-    border: none; /* Remove borders */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
+	width: 200px; /* Fixed width */
+	height: 50px; /* Fixed height */
+	margin: 20px auto; /* Center the button horizontally */
+	padding: 10px 0; /* Vertical padding */
+	text-align: center; /* Center text */
+	background-color: #333; /* Background color */
+	color: white; /* Text color */
+	border: none; /* Remove borders */
+	border-radius: 5px; /* Rounded corners */
+	font-size: 16px; /* Font size */
+	cursor: pointer; /* Pointer cursor on hover */
 }
 
 .checkout__order__product {
@@ -3525,7 +3509,7 @@ ol {
 }
 
 .checkout__order__total ul li span {
-	color: #ca1515;
+	color: #646063;
 	float: right;
 }
 
@@ -3549,11 +3533,11 @@ ol {
 	visibility: hidden;
 }
 
-.checkout__order__widget label input:checked~.checkmark {
+.checkout__order__widget label input:checked ~.checkmark {
 	border-color: #ca1515;
 }
 
-.checkout__order__widget label input:checked~.checkmark:after {
+.checkout__order__widget label input:checked ~.checkmark:after {
 	border-color: #ca1515;
 	opacity: 1;
 }
@@ -3586,7 +3570,6 @@ ol {
 /*---------------------
     Blog
 -----------------------*/
-
 .blog {
 	padding-top: 70px;
 	padding-bottom: 80px;
@@ -3659,7 +3642,6 @@ ol {
 /*---------------------
   Blog Sidebar
 -----------------------*/
-
 .blog__sidebar {
 	padding-left: 40px;
 }
@@ -3767,7 +3749,6 @@ ol {
 /*---------------------
   Blog Details
 -----------------------*/
-
 .blog-details {
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -4019,7 +4000,6 @@ ol {
 /*---------------------
   Contact
 -----------------------*/
-
 .contact {
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -4119,8 +4099,6 @@ table input {
 	margin-bottom: 20px;
 }
 
-
-
 .contact__form form input::-webkit-input-placeholder {
 	color: #444444;
 }
@@ -4183,7 +4161,6 @@ table input {
 }
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
-
 @media only screen and (min-width: 1600px) and (max-width: 1900px) {
 	.header {
 		padding: 0 85px;
@@ -4206,7 +4183,6 @@ table input {
 }
 
 /* Medium Device = 1200px */
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.header__menu ul li {
 		margin-right: 20px;
@@ -4226,7 +4202,6 @@ table input {
 }
 
 /* Tablet Device = 768px */
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.filter__controls li {
 		margin-right: 15px;
@@ -4345,8 +4320,7 @@ table input {
 	.slicknav_nav ul {
 		margin: 0;
 	}
-	.slicknav_nav .slicknav_row,
-	.slicknav_nav a {
+	.slicknav_nav .slicknav_row, .slicknav_nav a {
 		padding: 7px 0;
 		margin: 0;
 		color: #111111;
@@ -4431,7 +4405,6 @@ table input {
 }
 
 /* Wide Mobile = 480px */
-
 @media only screen and (max-width: 767px) {
 	.canvas__open {
 		display: block;
@@ -4513,8 +4486,7 @@ table input {
 	.slicknav_nav ul {
 		margin: 0;
 	}
-	.slicknav_nav .slicknav_row,
-	.slicknav_nav a {
+	.slicknav_nav .slicknav_row, .slicknav_nav a {
 		padding: 7px 0;
 		margin: 0;
 		color: #111111;
@@ -4658,7 +4630,6 @@ table input {
 }
 
 /* Small Device = 320px */
-
 @media only screen and (max-width: 479px) {
 	.categories__item.categories__large__item {
 		padding-left: 30px;

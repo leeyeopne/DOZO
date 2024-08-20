@@ -37,6 +37,29 @@ public class BasketServiceImpl implements BasketService {
 	}
 
 
+	
+	
+	
+
+	@Override
+	public boolean modifyBasket(BasketVO basket) {
+	    // 로그 추가
+	    System.out.println("Updating basket with details: " + basket);
+	    
+	    // Update the basket and check if one row is affected
+	    boolean isUpdated = mapper.updateBasket(basket) == 1;
+
+	    // Log the result
+	    if (isUpdated) {
+	        System.out.println("Basket updated successfully.");
+	    } else {
+	        System.out.println("Failed to update basket.");
+	    }
+	    
+	    return isUpdated;
+	}
+
+
 
 
 }

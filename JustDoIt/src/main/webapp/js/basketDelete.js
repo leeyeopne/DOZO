@@ -1,6 +1,8 @@
 /**
- * basketService.js
+ * basketDelete.js
  */
+console.log("basketDelete.js");
+
 console.log("basketService.js");
 
 const svc = {
@@ -38,3 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 });
+
+
+
+
+
