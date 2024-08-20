@@ -61,7 +61,7 @@
 											수정</button>
 									</td>
 									<td class="cart__total"><input type="hidden"
-										class="cartNo" value="${basket.cartNo}" /> <input
+										class="cartNo" name="cartNo" value="${basket.cartNo}" /> <input
 										type="hidden" class="prodNo" value="${basket.prodNo}" /> <input
 										type="hidden" class="prodPrice" value="${basket.prodPrice}" />
 										<span class="total-price">${basket.prodPrice * basket.productQuantity}</span>

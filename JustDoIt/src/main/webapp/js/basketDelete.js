@@ -3,7 +3,6 @@
  */
 console.log("basketDelete.js");
 
-console.log("basketService.js");
 
 const svc = {
 	// 삭제.
@@ -11,8 +10,9 @@ const svc = {
 		const xhtp = new XMLHttpRequest();
 		xhtp.open('GET', `removeBasket.do?cartNo=${cartNo}`, true);
 		xhtp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		xhtp.onload = loadCallback;
+
 		xhtp.send();
+				xhtp.onload = loadCallback;
 	}
 };
 
@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		// 그냥 querySelector로 하면 첫번째 것만 됨.
 		button.addEventListener('click', function() {
 			// 현재 버튼에서 cartNo 값을 찾기
-			let cartNo = this.closest('tr').querySelector('input[name=cartNo]').value;
-
+			let cartNo = document.querySelector('input[name=cartNo]').value;
+console.log(cartNo);
 			// AJAX 요청으로 장바구니 항목 삭제
 			svc.removeBasket(cartNo, function() {
 				let rs = JSON.parse(this.response);

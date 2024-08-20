@@ -42,7 +42,26 @@ public class BasketControl implements Control {
 		// 장바구니 서비스 호출
 		BasketService svc = new BasketServiceImpl();
 		boolean result = svc.addBasket(bvo);
+		
+		Map<String, Object> map = new HashMap<>(); // 배열만들기
+		try {
+			if (svc.addBasket(bvo)) {
+				map.put("result", "Success"); //{"retCode" : true, student_name : "홍길동"}
+			} else {
+				map.put("result", "Fail");
+			}
+		} catch (Exception e) {
+			// 오류발생할때
+			map.put("result", "Fail");
+		}
+
+		
 
 
+		// 결과값을 요청한곳(js)으로 보낼때 json 방식으로 보낸다.
+		Gson gson = new GsonBuilder().create();
+		String json = gson.toJson(map);
+
+		resp.getWriter().print(json);
 	}
 }
