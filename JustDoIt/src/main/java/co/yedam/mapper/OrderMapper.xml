@@ -3,25 +3,8 @@
 <mapper namespace="co.yedam.mapper.OrderMapper">
 
 	<!-- SQL 쿼리: BasketMapper.xml에서 insertBasket 쿼리를 정의하고 장바구니에 상품을 추가합니다. -->
-	<resultMap id="orderResultMap" type="co.yedam.vo.BasketVO">
-		<id property="cartNo" column="cart_no" />
-		<result property="prodNo" column="prod_no" />
-		<result property="memberNo" column="member_no" />
-		<result property="productColor" column="product_color" />
-		<result property="productSize" column="product_size" />
-		<result property="productQuantity" column="product_quantity" />
-		<result property="basketDate" column="basket_date" />
 
-		<association property="product"
-			javaType="co.yedam.vo.ProductVO">
-			<result property="prodName" column="prod_name" />
-			<result property="prodPrice" column="prod_price" />
-			<result property="thumbnail" column="thumbnail" />
-			<result property="prodStar" column="prod_star" />
-		</association>
-	</resultMap>
-
-	<select id="selectOrder" resultMap="orderResultMap">
+	<select id="selectOrder" parameterType="int" resultType="co.yedam.vo.BasketVO">
 		<!-- select cart_no ,prod_no ,member_no ,basket_date ,basket_color ,basket_size 
 			,basket_quantity from basket order by member_no -->
 
@@ -44,7 +27,30 @@
 		ON b.prod_no = p.prod_no
 		WHERE b.member_no = #{memberNo}
 	</select>
-
+<!-- 
+	<insert id="insertOrders">
+		INSERT INTO orders (order_no
+						   , member_no
+						   , order_quantity
+						   , order_price
+						   , receiver
+						   , address
+						   , order_option
+						   , order_phone
+						   , order_status
+						   , order_date)
+		VALUES			(order_seq.nextval
+						, #{memberNo}
+						, #{orderQuantity}
+						, #{orderPrice}
+						, #{receiver}
+						, #{address}
+						, #{orderOption}
+						, #{orderPhone}
+						, #{orderStatus}
+						, SYSDATE)
+	</insert>
+ -->
 
 
 </mapper>

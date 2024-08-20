@@ -42,9 +42,15 @@ document.querySelector('.cart-btn').addEventListener('click',function(){
 		productQuantity,
 		prodNo
 		}, function() {
-		
+			
+			
+		console.log(		productColor, productSize, productQuantity, prodNo);
 		// 컨트롤에서 db를 등록하고 나온 결과를 받는 부분 > 결과를 보낼때 json방식으로 보냈기 때문에 JSON.parse()를 한거
 		let rs = JSON.parse(this.response);
+		
+		        // 파싱된 응답 결과를 콘솔에 출력
+
+		
 		// 컨트롤에 나온 결과를 위에서 json으로 바꾼 값을 조건에 만족하면 alert를 작동시킴.
 		if (rs.result == 'Success') {
 			// 등록완료

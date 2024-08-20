@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import co.yedam.common.DataSource;
 import co.yedam.mapper.OrderMapper;
 import co.yedam.vo.BasketVO;
+import co.yedam.vo.OrdersVO;
 
 public class OrderServiceImpl implements OrderService{
 	SqlSession sqlSession = DataSource.getInstance().openSession(true);
@@ -19,5 +20,12 @@ public class OrderServiceImpl implements OrderService{
 
 		return mapper.selectOrder(memberNo);
 	}
+
+
+//	@Override
+//	public boolean addOrders(OrdersVO orders) {
+//		// TODO Auto-generated method stub
+//		return mapper.insertOrders(orders)==1;
+//	}
 
 }

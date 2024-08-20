@@ -29,8 +29,10 @@ function updateCartTotal() {
             
             // 품목의 총액을 계산
             let itemTotal = price * quantity;
-            totalElement.innerText = `${parseInt(itemTotal)}`;
-            
+            //totalElement.innerText = `${parseInt(itemTotal)}`;
+            if (totalElement) {
+                totalElement.innerText = `${itemTotal}`; // 숫자 값만 설정
+            }
             // 장바구니 총액에 추가
             total += itemTotal;
         }
@@ -38,21 +40,35 @@ function updateCartTotal() {
     
     // 장바구니 총액 업데이트
     let cartTotalElement = document.querySelector('.cart__total__procced .cartTotal');
-    if (cartTotalElement) {
-        cartTotalElement.innerText = `${parseInt(total)}`;
+    //if (cartTotalElement) {
+      //  cartTotalElement.innerText = `${parseInt(total)}`;
+    //}
+        if (cartTotalElement) {
+        cartTotalElement.innerText = `${total}`; // 숫자 값만 설정
     }
-    
-        // 주문 폼의 숨겨진 필드에 총액 값을 설정
-    document.getElementById('cartTotal').value = total;
+//        // 주문 폼의 숨겨진 필드에 총액 값을 설정
+//    document.getElementById('cartTotal').value = total;
+//}
+    // 주문 폼의 숨겨진 필드에 총액 값을 설정
+    let cartTotalInput = document.getElementsByName('cartTotal');
+    if (cartTotalInput) {
+        cartTotalInput.value = total;
+    } else {
+        console.error('Element with id "cartTotal" not found.');
+    }
 }
+
+
+// 페이지 로드 후 초기 총액 계산
+document.addEventListener('DOMContentLoaded', updateCartTotal);
 
 // 각 수량 입력 요소에 대해 이벤트 리스너 추가
 quantityInputs.forEach(input => {
     input.addEventListener('change', updateCartTotal);
 });
 
-// 페이지 로드 시 초기 총액 계산
-updateCartTotal();
+//// 페이지 로드 시 초기 총액 계산
+//updateCartTotal();
 
 
 
