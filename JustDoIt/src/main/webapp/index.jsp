@@ -93,7 +93,7 @@
 							</c:when>
 							<c:otherwise>
 								<div class="header__right__auth">
-									<a href="#">${sessionScope.loginName } 님 환영합니다</a> <a
+									<a href="#">${sessionScope.loginId } 님 환영합니다</a> <a
 										href="logout.do">로그아웃</a>
 								</div>
 

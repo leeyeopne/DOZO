@@ -53,7 +53,7 @@
 						</c:when>
 						<c:otherwise>
 							<div class="header__right__auth">
-								<a href="#">${sessionScope.loginName } 님 환영합니다</a> <a
+								<a href="#">${sessionScope.loginId } 님 환영합니다</a> <a
 									href="logout.do">로그아웃</a>
 							</div>
 
@@ -62,7 +62,7 @@
 								<li><a href="wishList.do?loginId=${sessionScope.loginId}"><span class="icon_heart_alt"></span>
 							      	<!-- wishList 갯수 구현 -->
 									<div class="tip">2</div> </a></li>
-								<li><a href="basketForm.do?memberNo=${sessionScope.memberNo} "><span class="icon_bag_alt"></span>
+								<li><a href="#"><span class="icon_bag_alt"></span>
 										<div class="tip"></div> </a></li>
 							</ul>
 						</c:otherwise>
