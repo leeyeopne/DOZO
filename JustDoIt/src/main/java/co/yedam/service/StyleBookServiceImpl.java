@@ -31,11 +31,6 @@ public class StyleBookServiceImpl implements StyleBookService {
 	}
 
 	@Override
-	public boolean modifyBoard(StyleBookVO board) {
-		return mapper.updateBoard(board) == 1;
-	}
-
-	@Override
 	public boolean removeBoard(int boardNo) {
 		return mapper.deleteBoard(boardNo) == 1;
 	}

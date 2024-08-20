@@ -98,7 +98,10 @@
 				title = #{title},
 			</if>
 			<if test="content != null">
-				content = #{content}
+				content = #{content},
+			</if>
+			<if test="image != null">
+				image = #{image},
 			</if>
 		</set>
 		WHERE board_no = #{boardNo}

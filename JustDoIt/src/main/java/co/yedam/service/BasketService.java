@@ -16,7 +16,9 @@ public interface BasketService {
 	
 	boolean modifyBasket(BasketVO basket);
 
-	
+
+	boolean removeBasket(int cartNo);
+
 //	List<BasketVO> getBasketList();
 //
 //	BasketVO getBasket(int memeberNo);

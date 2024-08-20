@@ -26,6 +26,10 @@
   <definition name="WILDCARD:styleBook/*" extends="myapp.user">
     <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
   </definition>
+  <definition name="WILDCARD:index/*" extends="myapp.user">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>
+
 
 	<definition name="myapp.user" template="/WEB-INF/layout/template.jsp">
 		<put-attribute name="title" value="Shop Homepage - Start Bootstrap Template" />

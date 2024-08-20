@@ -3,12 +3,30 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
-	<display-name>MinJun</display-name>
+	<display-name>dozo</display-name>
 
 	<!-- 타일즈 listener 등록. -->
 	<listener>
 		<listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
 	</listener>
+
+	<servlet>
+		<servlet-name>ConfirmIdControl</servlet-name>
+		<servlet-class>co.yedam.control.ConfirmIdControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfirmIdControl</servlet-name>
+		<url-pattern>/confirmId</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegisterControl</servlet-name>
+		<servlet-class>co.yedam.control.RegisterControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterControl</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>front</servlet-name>

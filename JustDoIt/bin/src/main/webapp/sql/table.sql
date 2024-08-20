@@ -1,22 +1,107 @@
-create table product_tbl (
- prd_code char(4) primary key, -- P001, P002
- prd_name varchar2(100) not null, --상품명.
- prd_desc varchar2(1000) not null, --상품의 설명.
- origin_price number, --원가격.
- sale_price number, --할인가격.
- star_point number, --별점.
- prod_image varchar2(100), --상품이미지명.
- creation_date date default sysdate --생성일자.
+DROP SEQUENCE board_seq;
+DROP TABLE basket;
+DROP TABLE board;
+DROP TABLE orderdetails;
+DROP TABLE ordering;
+DROP TABLE product;
+DROP TABLE basket;
+DROP TABLE wishlist;
+DROP TABLE review;
+DROP TABLE productinventory;
+DROP TABLE member;
+
+---------------------------------------------------------------------------------------------------------------------
+
+CREATE SEQUENCE member_seq; -- 멤버 번호
+CREATE SEQUENCE prod_seq; -- 제품 번호
+CREATE SEQUENCE basket_seq; -- 장바구니 번호
+CREATE SEQUENCE wishlist_seq; -- 위시리스트 번호
+CREATE SEQUENCE board_seq; -- 게시물 번호
+
+
+CREATE TABLE member
+(   member_no      NUMBER          NOT NULL, -- 멤버 번호
+    member_id      VARCHAR2(50)    NOT NULL, -- 멤버 아이디
+    member_pw      VARCHAR2(30)    NOT NULL, -- 멤버 비밀번호
+    member_nm      VARCHAR2(30)    NOT NULL, -- 멤버 이름
+    address        VARCHAR2(200)   NOT NULL, -- 주소
+    email          VARCHAR2(100)   NOT NULL, -- 이메일
+    phone          VARCHAR2(30)    NOT NULL, -- 전화번호
+    creation_date  DATE            NULL,  -- 가입날짜
+    PRIMARY KEY(member_no)                           
 );
-insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
-values('P001', '과테말라 안티구아', '아주 맛있는 과테말라 안티구아 입니다', 3000, 2500, 5, '과테말라 안티구아.jpg');
-insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
-values('P002', '니카라구아 더치', '아주 맛있는 니카라구아 더치 입니다', 4000, 3500, 4, '니카라구아 더치.jpg');
-insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
-values('P003', '브라질산토스', '아주 맛있는 브라질산토스 입니다', 6000, 5500, 3, '브라질산토스.jpg');
-insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
-values('P004', '에티오피아 예가체프', '아주 맛있는 에티오피아 예가체프 입니다', 7000, 6500, 2, '에티오피아 예가체프.jpg');
-insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
-values('P005', '케냐 오크라톡신', '아주 맛있는 케냐 오크라톡신 입니다', 3500, 2800, 1, '케냐 오크라톡신.jpg');
-insert into product_tbl (prd_code, prd_name, prd_desc, origin_price, sale_price, star_point, prod_image)
-values('P006', '코스타리카 따라주', '아주 맛있는 코스타리카 따라주 입니다', 4500, 3200, 1, '코스타리카 따라주.jpg');
+    
+       
+CREATE TABLE product(
+prod_no NUMBER,              -- 제품번호
+prod_name VARCHAR2(100),     -- 제품이름
+prod_price NUMBER,           -- 제품가격
+prod_category VARCHAR2(200), -- 제품 카테고리
+prod_image1 VARCHAR2(500),   -- 제품 이미지1
+prod_image2 VARCHAR2(500),   -- 제품 이미지2
+prod_image3 VARCHAR2(500),   -- 제품 이미지3
+prod_image4 VARCHAR2(500),   -- 제품 이미지4
+prod_exp VARCHAR2(600),      -- 제품 설명
+prod_code VARCHAR2(50),      -- 제품 코드
+thumbnail VARCHAR2(500),     -- 제품 썸네일
+PRIMARY KEY(prod_no)
+);
+
+ALTER TABLE product ADD prod_category2 VARCHAR(20);
+ALTER TABLE product MODIFY prod_price VARCHAR2(100);
+ALTER TABLE product ADD prod_star number;
+
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'남자 상의 test1','123,000 원','top','mentop1.png',5,'men');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'남자 하의 test1','99,000 원','bottom','menbottom1.jpg',4,'men');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'나이키 머큐리얼 슈퍼플라이 10 엘리트 일렉트릭','339,000 원','shoes','nikefootball.png',3,'men');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'여자 상의 test1','209,000 원','top','womentop1.png',2,'women');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'여자 하의 test1','109,000 원','bottom','womenbottom1.png',1,'women');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'여자 신발 test1','139,000 원','shoes','nikeairjordan.jpg',5,'women');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'어린이 상의 test1','109,000 원','top','kidtop1.jpg',5,'kids');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'어린이 하의 test1','59,000 원','bottom','kidbottom1.png',3,'kids');
+Insert into PRODUCT (PROD_NO,PROD_NAME,PROD_PRICE,PROD_CATEGORY,THUMBNAIL,PROD_STAR,PROD_CATEGORY2) 
+values (prod_seq.NEXTVAL,'어린이 신발 test1','29,000 원','shoes','nikeairforce.png',4,'kids');
+
+
+CREATE TABLE basket(
+cart_no NUMBER,              -- 장바구니 번호
+prod_no NUMBER,              -- 제품번호
+member_no NUMBER,            -- 멤버번호
+basket_date DATE,            -- 장바구니 넣은 날짜
+product_color VARCHAR2(20),  -- 장바구니 제품 색
+product_size VARCHAR2(20),   -- 장바구니 제품 사이즈
+product_quantity NUMBER,     -- 장바구니 제품 양
+PRIMARY KEY(cart_no),
+FOREIGN KEY(prod_no) REFERENCES product(prod_no),  -- 제품번호 외래키 참조
+FOREIGN KEY(member_no) REFERENCES member(member_no) -- 멤버번호 외래키 참조
+);
+
+
+CREATE TABLE wishlist(
+wish_no NUMBER,      -- 위시리스트 번호
+prod_no NUMBER,      -- 제품 번호
+member_no NUMBER,    -- 멤버 번호
+wish_date DATE,      -- 위시리스트 날짜
+PRIMARY KEY(wish_no),
+FOREIGN KEY(prod_no) REFERENCES product(prod_no),  -- 제품번호 외래키 참조
+FOREIGN KEY(member_no) REFERENCES member(member_no) -- 멤버번호 외래키 참조
+);
+
+
+CREATE TABLE style_tbl (
+    board_no NUMBER,
+    title VARCHAR2(200),
+    writer VARCHAR2(50),
+    content VARCHAR2(1000),
+    image VARCHAR2(1000),
+    writer_date DATE DEFAULT sysdate,
+    view_cnt NUMBER DEFAULT 0
+);
