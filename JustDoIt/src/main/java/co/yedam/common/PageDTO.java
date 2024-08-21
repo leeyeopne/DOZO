@@ -15,7 +15,7 @@ public class PageDTO {
         this.endPage = (int) (Math.ceil(page / 10.0) * 10); // 2*10
         this.startPage = this.endPage - 9; // 
 
-        int realEnd = (int)Math.ceil(totalCnt / pCnt); // 실제건수 계산한 마지막 페이지.
+        int realEnd = (int)Math.ceil(totalCnt / (double)pCnt); // 실제건수 계산한 마지막 페이지.
         this.endPage = this.endPage > realEnd ? realEnd : this.endPage;
 
         this.prev = this.startPage > 1;
